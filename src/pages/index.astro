@@ -1,12 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import GitHub from "../icons/GitHub.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<main>
-		<h1 class="text-5xl">Hello world</h1>
-	</main>
+<Layout title="Portfolio">
+  <main>
+    <section class="w-full lg:w-3xl mx-auto py-44">
+      <img
+        src="/src/assets/oscaresteve.png"
+        alt="oscar photo"
+        class="rounded-full size-20 mb-6"
+      />
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-6">
+        Hey, soy Óscar <a
+          href="https://linkedin.com/in/oscaresteve"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+        </a>
+      </h1>
+      <h2 class="text-2xl text-wrap">
+        Desarrollador de Aplicaciones <span class="text-blue-200">Web</span> y <span
+          class="text-blue-200">Multiplataforma</span
+        >. De Valencia, España
+      </h2>
+
+      <nav class="flex gap-x-2 mt-10">
+        <SocialPill href="https://linkedin.com/in/oscaresteve">
+          <LinkedIn class="size-4" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/oscaresteve">
+          <GitHub class="size-4" />
+          GitHub
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
 </Layout>
