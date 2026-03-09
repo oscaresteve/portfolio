@@ -3,12 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import SocialPill from "../components/SocialPill.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import GitHub from "../icons/GitHub.astro";
+import MailSearch from "../icons/MailSearch.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Portfolio">
+<Layout
+  title="Portfolio de Óscar Esteve - Desarrollador y Programador Web"
+  description="Contrata a Óscar Esteve para crear tu aplicacion web o móvil"
+>
   <main>
     <section class="w-full lg:w-3xl mx-auto py-44">
       <img
@@ -39,6 +43,10 @@ import GitHub from "../icons/GitHub.astro";
         <SocialPill href="https://github.com/oscaresteve">
           <GitHub class="size-4" />
           GitHub
+        </SocialPill>
+        <SocialPill href="https://github.com/oscaresteve">
+          <MailSearch class="size-4" />
+          oscarestevea24@gmail.com
         </SocialPill>
       </nav>
     </section>
