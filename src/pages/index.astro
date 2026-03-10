@@ -4,6 +4,8 @@ import SocialPill from "../components/SocialPill.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import GitHub from "../icons/GitHub.astro";
 import MailSearch from "../icons/MailSearch.astro";
+import Experience from "../components/Experience.astro";
+import ContainerSection from "../components/ContainerSection.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -14,7 +16,7 @@ import MailSearch from "../icons/MailSearch.astro";
   description="Contrata a Óscar Esteve para crear tu aplicacion web o móvil"
 >
   <main>
-    <section class="w-full lg:w-3xl mx-auto py-44">
+    <ContainerSection>
       <img
         src="/src/assets/oscaresteve.png"
         alt="oscar photo"
@@ -26,13 +28,15 @@ import MailSearch from "../icons/MailSearch.astro";
           target="_blank"
           rel="noopener"
           class="flex justify-center items-center"
-        >
+          ><span class="bg-white/10 text-xs font-medium px-1.5 py-0.5 rounded"
+            >Disponibe para trabajar</span
+          >
         </a>
       </h1>
       <h2 class="text-2xl text-wrap">
         Desarrollador de Aplicaciones <span class="text-blue-200">Web</span> y <span
           class="text-blue-200">Multiplataforma</span
-        >. De Valencia, España
+        >. De Valencia, España.
       </h2>
 
       <nav class="flex gap-x-2 mt-10">
@@ -49,6 +53,9 @@ import MailSearch from "../icons/MailSearch.astro";
           oscarestevea24@gmail.com
         </SocialPill>
       </nav>
-    </section>
+    </ContainerSection>
+    <ContainerSection>
+      <Experience />
+    </ContainerSection>
   </main>
 </Layout>
