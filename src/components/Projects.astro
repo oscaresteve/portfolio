@@ -1,0 +1,65 @@
+---
+import Angular from "../icons/Angular.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import Supabase from "../icons/Supabase.astro";
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    icon: Angular,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    icon: Css,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    icon: Supabase,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Solar",
+    description: "Proyecto de Desarrollo en Entorno Cliente del curso 2º DAW",
+    link: "https://solar-oscaresteve.vercel.app/#/home",
+    github: "https://github.com/oscaresteve/solar",
+    image: "/src/assets/solar.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+      <p class="text-lg mb-6 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/10 py-1 px-2">
+              <tag.icon class="size-3" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
+    </article>
+  ))
+}
