@@ -1,3 +1,7 @@
-<section class="w-full lg:w-3xl mx-auto mt-44">
+---
+const { id, class: className } = Astro.props;
+---
+
+<section class=`w-full lg:w-3xl mx-auto ${className}`>
   <slot />
 </section>

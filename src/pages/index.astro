@@ -6,6 +6,7 @@ import GitHub from "../icons/GitHub.astro";
 import MailSearch from "../icons/MailSearch.astro";
 import Experience from "../components/Experience.astro";
 import ContainerSection from "../components/ContainerSection.astro";
+import Briefcase from "../icons/Briefcase.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -16,7 +17,7 @@ import ContainerSection from "../components/ContainerSection.astro";
   description="Contrata a Óscar Esteve para crear tu aplicacion web o móvil"
 >
   <main>
-    <ContainerSection>
+    <ContainerSection class="mt-44">
       <img
         src="/src/assets/oscaresteve.png"
         alt="oscar photo"
@@ -54,7 +55,11 @@ import ContainerSection from "../components/ContainerSection.astro";
         </SocialPill>
       </nav>
     </ContainerSection>
-    <ContainerSection>
+    <ContainerSection class="mt-22">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-6" />
+        Experincia laboral
+      </h2>
       <Experience />
     </ContainerSection>
   </main>
