@@ -4,6 +4,8 @@ import Tailwind from "../icons/Tailwind.astro";
 import Html from "../icons/Html.astro";
 import Css from "../icons/Css.astro";
 import Supabase from "../icons/Supabase.astro";
+import GitHub from "../icons/GitHub.astro";
+import ExternalLink from "../icons/ExternalLink.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -43,12 +45,12 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, link, github, image, tags }) => (
     <article>
-      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
-      <p class="text-lg mb-6 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 mb-2">
+      <h3 class="text-2xl font-semibold mb-2 text-blue-100">{title}</h3>
+      <p class="text-lg text-pretty mb-4 text-white/80">{description}</p>
+      <ul class="flex gap-x-2">
         {tags.map((tag) => (
           <li>
-            <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/10 py-1 px-2">
+            <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/5 border border-white/10 hover:border-white/15 py-1 px-2">
               <tag.icon class="size-3" />
               {tag.name}
             </span>
@@ -56,10 +58,29 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class="rounded shadow-2xl shadow-white/10"
+        class="hover:scale-101 transition duration-300 my-2"
         src={image}
         alt={`Captura de pantalla del proyecto ${title}`}
       />
+      <div class="flex gap-x-2">
+        <a
+          class="rounded-xl border border-white/20 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer"
+          target="_blank"
+          rel="noopener"
+        >
+          <ExternalLink class="size-4" />
+          Preview
+        </a>
+        <a
+          href={github}
+          class="rounded-xl border border-white/20 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer"
+          target="_blank"
+          rel="noopener"
+        >
+          <GitHub class="size-4" />
+          Code
+        </a>
+      </div>
     </article>
   ))
 }
