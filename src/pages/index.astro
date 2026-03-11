@@ -9,6 +9,8 @@ import ContainerSection from "../components/ContainerSection.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import Code from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import User from "../icons/User.astro";
+import About from "../components/About.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -69,6 +71,14 @@ import Projects from "../components/Projects.astro";
         Experincia laboral
       </h2>
       <Experience />
+    </ContainerSection>
+
+    <ContainerSection id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
+        <User class="size-8" />
+        Sobre mí
+      </h2>
+      <About />
     </ContainerSection>
   </main>
 </Layout>
