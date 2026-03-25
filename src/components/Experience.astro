@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente",
+    job: "Desarrollador web",
+    title: "GRUP APUNTS",
+    description:
+      "Actualmente realizo mis prácticas como desarrollador web, colaborando en el desarrollo y mejora de soluciones digitales.",
+  },
+  {
+    date: "2024 - 2024 (3 meses)",
+    job: "Desarrollador web",
+    title: "AELE, ARMARIOS LEVANTE",
+    description:
+      "Desarrollé el presupuestador web de la empresa, implementando herramientas de cálculo y personalización de armarios para agilizar la elaboración de presupuestos y mejorar la experiencia del cliente.",
+  },
+  {
+    date: "2023 - 2023 (3 meses)",
+    job: "Reponedor de Hipermercado",
+    title: "CENTROS COMERCIALES CARREFOUR SA",
+    description:
+      "Atendí y asesoré a clientes en la sección de electrodomésticos, combinando tareas de venta, reposición y control de inventario para garantizar una buena atención y disponibilidad de producto.",
+  },
+];
+---
+
+<ol class="relative border-s border-white ml-3.5">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

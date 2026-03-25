@@ -1,0 +1,34 @@
+---
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+
+const today = new Date();
+---
+
+<footer class="w-7xl mx-auto mt-10 flex items-center justify-between py-4 px-6">
+  <div class="flex flex-col gap-0.5">
+    <span class="text-sm font-medium opacity-80">Óscar Esteve Aleixandre</span>
+    <span class="text-xs opacity-80">
+      © {today.getFullYear()} — Todos los derechos reservados
+    </span>
+  </div>
+
+  <nav class="flex items-center gap-3">
+    <a
+      href="https://www.linkedin.com/in/%C3%B3scar-esteve-aleixandre-629a11300/"
+      target="_blank"
+      rel="noopener"
+      aria-label="LinkedIn"
+    >
+      <LinkedIn class="size-4 opacity-80 hover:opacity-100 transition" />
+    </a>
+    <a
+      href="https://github.com/oscaresteve"
+      target="_blank"
+      rel="noopener"
+      aria-label="GitHub"
+    >
+      <GitHub class="size-4 opacity-80 hover:opacity-100 transition" />
+    </a>
+  </nav>
+</footer>
