@@ -47,8 +47,7 @@ const PROJECTS = [
   {
     title: "Solar",
     description: [
-      "Aplicacion Web para la gestión de plantas solares.",
-      "Permite a los usuarios crear, editar y eliminar plantas solares, así como registrar y visualizar datos de producción y consumo a través de gráficos interactivos.",
+      "Aplicacion Web para la gestión de plantas solares. Permite a los usuarios crear, editar y eliminar plantas solares, así como registrar y visualizar datos de producción y consumo a través de gráficos interactivos.",
     ],
 
     link: "https://solar-oscaresteve.vercel.app",
@@ -59,8 +58,7 @@ const PROJECTS = [
   {
     title: "2048 adventure",
     description: [
-      "Juego de puzzle estilo 2048 con niveles y ranking online.",
-      "Los jugadores pueden registrarse y competir por la mayor puntuación.",
+      "Juego de puzzle estilo 2048 con niveles y ranking online. Los jugadores pueden registrarse y competir por la mayor puntuación.",
     ],
     link: "https://2048adventure.vercel.app",
     github: "https://github.com/oscaresteve/2048-adventure",
@@ -74,10 +72,10 @@ const PROJECTS = [
   {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
       <article>
-        <h3 class="text-2xl font-semibold mb-2 text-blue-300">{title}</h3>
-        <div class="mb-4 text-lg text-pretty text-white/80">
+        <div class="prose mb-4">
+          <h3 class="text-2xl  text-blue-300">{title}</h3>
           {description.map((desc) => (
-            <p>{desc}</p>
+            <p class="text-white/80">{desc}</p>
           ))}
         </div>
         <ul class="flex gap-2 flex-wrap">
@@ -97,7 +95,6 @@ const PROJECTS = [
             alt={`Captura de pantalla del proyecto ${title}`}
           />
         </a>
-
         <nav class="flex gap-2">
           <a
             href={link}
