@@ -11,6 +11,8 @@ import Code from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import User from "../icons/User.astro";
 import About from "../components/About.astro";
+import { Image } from "astro:assets";
+import oscaresteve from "../assets/oscaresteve.webp";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -22,7 +24,7 @@ import About from "../components/About.astro";
 >
   <main>
     <ContainerSection class="mt-20">
-      <img src="/src/assets/oscaresteve.webp" alt="Foto de Óscar" class="rounded-full size-20 mb-6" />
+      <Image src={oscaresteve} alt="Foto de Óscar" class="rounded-full size-20 mb-6" />
       <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-6">
         Hola, soy <span class="text-blue-300">Óscar</span>
       </h1>
