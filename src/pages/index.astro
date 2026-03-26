@@ -25,17 +25,19 @@ import oscaresteve from "../assets/oscaresteve.webp";
   <main>
     <ContainerSection class="mt-20">
       <Image src={oscaresteve} alt="Foto de Óscar" class="rounded-full size-20 mb-6" />
-      <h1 class="text-5xl font-bold mb-4">
-        Hey, soy <span class="text-blue-300"> Óscar</span>
-      </h1>
-      <h2 class="text-2xl text-pretty text-white/90">
-        Desarrollador de Aplicaciones
-        <span class="text-blue-300">Web</span> y Multiplataforma de Valencia, España. Especializado en
-        <span class="text-blue-300">frontend</span>
-        y diseño de interfaces limpias e intuitivas.
-      </h2>
+      <article class="prose">
+        <h1 class="text-5xl text-white">
+          Hey, soy <span class="text-blue-300"> Óscar</span>
+        </h1>
+        <p class="text-2xl text-pretty text-white/90">
+          Desarrollador de Aplicaciones
+          <span class="text-blue-300">Web</span> y Multiplataforma de Valencia, España. Especializado en
+          <span class="text-blue-300">frontend</span>
+          y diseño de interfaces limpias e intuitivas.
+        </p>
+      </article>
 
-      <nav class="flex flex-wrap gap-2 mt-6">
+      <nav class="flex flex-wrap gap-2 mt-8">
         <SocialPill href="https://linkedin.com/in/oscaresteve">
           <LinkedIn class="size-4" />
           LinkedIn
