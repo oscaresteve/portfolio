@@ -8,6 +8,9 @@ import GitHub from "../icons/GitHub.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
 import { Image } from "astro:assets";
 import solar from "../assets/solar.webp";
+import adventure from "../assets/2048-adventure.webp";
+import Vite from "../icons/Vite.astro";
+import JavaScript from "../icons/JavaScript.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -30,63 +33,92 @@ const TAGS = {
     name: "Supabase",
     icon: Supabase,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+  VITE: {
+    name: "Vite",
+    icon: Vite,
+  },
 };
 
 const PROJECTS = [
   {
     title: "Solar",
-    description: "Proyecto de Desarrollo en Entorno Cliente del curso 2º DAW",
-    link: "https://solar-oscaresteve.vercel.app/#/home",
+    description: [
+      "Aplicacion Web para la gestión de plantas solares.",
+      "Permite a los usuarios crear, editar y eliminar plantas solares, así como registrar y visualizar datos de producción y consumo a través de gráficos interactivos.",
+    ],
+
+    link: "https://solar-oscaresteve.vercel.app",
     github: "https://github.com/oscaresteve/solar",
     image: solar,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
   },
+  {
+    title: "2048 adventure",
+    description: [
+      "Juego de puzzle estilo 2048 con niveles y ranking online.",
+      "Los jugadores pueden registrarse y competir por la mayor puntuación.",
+    ],
+    link: "https://2048adventure.vercel.app",
+    github: "https://github.com/oscaresteve/2048-adventure",
+    image: adventure,
+    tags: [TAGS.JAVASCRIPT, TAGS.VITE, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
+  },
 ];
 ---
 
-{
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold mb-2 text-blue-300">{title}</h3>
-      <p class="text-lg text-pretty mb-4 text-white/80">{description}</p>
-      <ul class="flex gap-2 flex-wrap">
-        {tags.map((tag) => (
-          <li>
-            <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/5 border border-white/10 hover:border-white/15 py-1 px-2">
-              <tag.icon class="size-3" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <a href={link} target="_blank" rel="noopener">
-        <Image
-          class="hover:scale-101 transition duration-300 my-2 cursor-pointer"
-          src={image}
-          alt={`Captura de pantalla del proyecto ${title}`}
-        />
-      </a>
+<div class="gap-10 flex flex-col">
+  {
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+      <article>
+        <h3 class="text-2xl font-semibold mb-2 text-blue-300">{title}</h3>
+        <div class="mb-4 text-lg text-pretty text-white/80">
+          {description.map((desc) => (
+            <p>{desc}</p>
+          ))}
+        </div>
+        <ul class="flex gap-2 flex-wrap">
+          {tags.map((tag) => (
+            <li>
+              <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/5 border border-white/10 hover:border-white/15 py-1 px-2">
+                <tag.icon class="size-3" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a href={link} target="_blank" rel="noopener">
+          <Image
+            class="hover:scale-101 transition duration-300 my-2 cursor-pointer"
+            src={image}
+            alt={`Captura de pantalla del proyecto ${title}`}
+          />
+        </a>
 
-      <nav class="flex gap-2">
-        <a
-          href={link}
-          class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
-          target="_blank"
-          rel="noopener"
-        >
-          <ExternalLink class="size-4" />
-          Vista previa
-        </a>
-        <a
-          href={github}
-          class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
-          target="_blank"
-          rel="noopener"
-        >
-          <GitHub class="size-4" />
-          Código
-        </a>
-      </nav>
-    </article>
-  ))
-}
+        <nav class="flex gap-2">
+          <a
+            href={link}
+            class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
+            target="_blank"
+            rel="noopener"
+          >
+            <ExternalLink class="size-4" />
+            Vista previa
+          </a>
+          <a
+            href={github}
+            class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
+            target="_blank"
+            rel="noopener"
+          >
+            <GitHub class="size-4" />
+            Código
+          </a>
+        </nav>
+      </article>
+    ))
+  }
+</div>
