@@ -1,27 +1,29 @@
+---
+import { Image } from "astro:assets";
+import oscaresteve from "../assets/oscaresteve.webp";
+---
+
 <article class="flex gap-x-6">
   <p class="text-pretty text-white/90">
     Soy
-    <span class="text-blue-300">Óscar Esteve</span>, desarrollador frontend de
-    Alzira (Valencia). Me gusta crear aplicaciones web modernas, intuitivas y
-    bien diseñadas, cuidando tanto la experiencia de usuario como el detalle
+    <span class="text-blue-300">Óscar Esteve</span>, desarrollador frontend de Alzira (Valencia). Me gusta crear
+    aplicaciones web modernas, intuitivas y bien diseñadas, cuidando tanto la experiencia de usuario como el detalle
     visual. <br />
     <br />
     Trabajo principalmente con
     <span class="text-blue-300">JavaScript</span>, usando tecnologías como
-    <span class="text-blue-300">React, Angular y TailwindCSS</span>, y
-    actualmente sigo ampliando mis conocimientos con herramientas como
+    <span class="text-blue-300">React, Angular y TailwindCSS</span>, y actualmente sigo ampliando mis conocimientos con
+    herramientas como
     <span class="text-blue-300">Astro y Next.js</span>. <br />
     <br />
-    Actualmente estoy realizando las prácticas del ciclo superior de Desarrollo de
-    Aplicaciones Web
-    <span class="text-blue-300">(DAW)</span> tras haber completado el de Desarrollo
-    de Aplicaciones Multiplataforma
-    <span class="text-blue-300"> (DAM) </span> y continúo aprendiendo y mejorando
-    mis habilidades como desarrollador cada día.
+    Actualmente estoy realizando las prácticas del ciclo superior de Desarrollo de Aplicaciones Web
+    <span class="text-blue-300">(DAW)</span> tras haber completado el de Desarrollo de Aplicaciones Multiplataforma
+    <span class="text-blue-300"> (DAM) </span> y continúo aprendiendo y mejorando mis habilidades como desarrollador cada
+    día.
   </p>
-  <img
-    src="src/assets/oscaresteve.webp"
-    alt=""
+  <Image
+    src={oscaresteve}
+    alt="Foto de Óscar"
     class="rounded-xl border-white/10 border hover:scale-101 transition duration-300 hover:border-white/20 h-60 w-auto"
   />
 </article>
