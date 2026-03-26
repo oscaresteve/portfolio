@@ -35,8 +35,12 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Solar",
-    description: "Proyecto de Desarrollo en Entorno Cliente del curso 2º DAW",
-    link: "https://solar-oscaresteve.vercel.app/#/home",
+    description: [
+      "Aplicacion Web para la gestión de plantas solares.",
+      "Permite a los usuarios crear, editar y eliminar plantas solares, así como registrar y visualizar datos de producción y consumo a través de gráficos interactivos.",
+    ],
+
+    link: "https://solar-oscaresteve.vercel.app",
     github: "https://github.com/oscaresteve/solar",
     image: solar,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
@@ -48,7 +52,11 @@ const PROJECTS = [
   PROJECTS.map(({ title, description, link, github, image, tags }) => (
     <article>
       <h3 class="text-2xl font-semibold mb-2 text-blue-300">{title}</h3>
-      <p class="text-lg text-pretty mb-4 text-white/80">{description}</p>
+      <div class="mb-4 text-lg text-pretty text-white/80">
+        {description.map((desc) => (
+          <p>{desc}</p>
+        ))}
+      </div>
       <ul class="flex gap-2 flex-wrap">
         {tags.map((tag) => (
           <li>
