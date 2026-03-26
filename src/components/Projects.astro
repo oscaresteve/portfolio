@@ -8,6 +8,9 @@ import GitHub from "../icons/GitHub.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
 import { Image } from "astro:assets";
 import solar from "../assets/solar.webp";
+import adventure from "../assets/2048-adventure.webp";
+import Vite from "../icons/Vite.astro";
+import JavaScript from "../icons/JavaScript.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -30,6 +33,14 @@ const TAGS = {
     name: "Supabase",
     icon: Supabase,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+  VITE: {
+    name: "Vite",
+    icon: Vite,
+  },
 };
 
 const PROJECTS = [
@@ -44,6 +55,17 @@ const PROJECTS = [
     github: "https://github.com/oscaresteve/solar",
     image: solar,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
+  },
+  {
+    title: "2048 adventure",
+    description: [
+      "Juego de puzzle estilo 2048 con niveles y ranking online.",
+      "Los jugadores pueden registrarse y competir por la mayor puntuación.",
+    ],
+    link: "https://2048adventure.vercel.app",
+    github: "https://github.com/oscaresteve/2048-adventure",
+    image: adventure,
+    tags: [TAGS.JAVASCRIPT, TAGS.VITE, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
   },
 ];
 ---
