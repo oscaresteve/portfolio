@@ -59,11 +59,14 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <Image
-        class="hover:scale-101 transition duration-300 my-2"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${title}`}
-      />
+      <a href={link} target="_blank" rel="noopener">
+        <Image
+          class="hover:scale-101 transition duration-300 my-2 cursor-pointer"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      </a>
+
       <nav class="flex gap-2">
         <a
           href={link}
