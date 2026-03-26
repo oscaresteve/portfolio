@@ -6,6 +6,8 @@ import Css from "../icons/Css.astro";
 import Supabase from "../icons/Supabase.astro";
 import GitHub from "../icons/GitHub.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
+import { Image } from "astro:assets";
+import solar from "../assets/solar.webp";
 
 const TAGS = {
   ANGULAR: {
@@ -36,7 +38,7 @@ const PROJECTS = [
     description: "Proyecto de Desarrollo en Entorno Cliente del curso 2º DAW",
     link: "https://solar-oscaresteve.vercel.app/#/home",
     github: "https://github.com/oscaresteve/solar",
-    image: "/src/assets/solar.webp",
+    image: solar,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
   },
 ];
@@ -57,7 +59,7 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
+      <Image
         class="hover:scale-101 transition duration-300 my-2"
         src={image}
         alt={`Captura de pantalla del proyecto ${title}`}
