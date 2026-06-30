@@ -7,10 +7,19 @@ import Supabase from "../icons/Supabase.astro";
 import GitHub from "../icons/GitHub.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
 import { Image } from "astro:assets";
-import solar from "../assets/solar.webp";
-import adventure from "../assets/2048-adventure.webp";
+import solar from "../assets/solar.png";
+import adventure from "../assets/2048adventure.png";
 import Vite from "../icons/Vite.astro";
 import JavaScript from "../icons/JavaScript.astro";
+import graphly from "../assets/graphly.png";
+import Next from "../icons/Next.astro";
+import NeonDb from "../icons/NeonDb.astro";
+import DrizzleOrm from "../icons/DrizzleOrm.astro";
+import Clerk from "../icons/Clerk.astro";
+import Shadcn from "../icons/Shadcn.astro";
+import caballeroromo from "../assets/caballeroromo.png";
+import grupateneas from "../assets/grupateneas.png";
+import WordPress from "../icons/Wordpress.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -41,15 +50,70 @@ const TAGS = {
     name: "Vite",
     icon: Vite,
   },
+  NEXT: {
+    name: "Next",
+    icon: Next,
+  },
+  NEONDB: {
+    name: "Neon Db",
+    icon: NeonDb,
+  },
+  DRIZZLEORM: {
+    name: "Drizzle ORM",
+    icon: DrizzleOrm,
+  },
+  CLERK: {
+    name: "Clerk",
+    icon: Clerk,
+  },
+  SHADCN: {
+    name: "Shadcn",
+    icon: Shadcn,
+  },
+  WORDPRESS: {
+    name: "WordPress",
+    icon: WordPress,
+  },
 };
 
 const PROJECTS = [
   {
+    title: "Graphly",
+    description: [
+      "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
+      "Desarrollada con Next.js y Server Actions para unificar frontend y backend en el mismo proyecto, Clerk para gestionar la autenticación sin complicaciones, y Drizzle ORM junto con NeonDB para un acceso a base de datos tipado y eficiente.",
+    ],
+    link: "https://graphly-oscaresteve.vercel.app",
+    github: "https://github.com/oscaresteve/graphly",
+    image: graphly,
+    tags: [TAGS.NEXT, TAGS.NEONDB, TAGS.DRIZZLEORM, TAGS.CLERK, TAGS.TAILWIND, TAGS.SHADCN],
+  },
+  {
+    title: "Caballero ROMO",
+    description: [
+      "Web corporativa para una asesoría, con presentación de los servicios de la firma y los datos de contacto para que los clientes puedan ponerse en contacto fácilmente.",
+      "Construida con WordPress para ofrecer al cliente un desarrollo rápido y un sitio fácil de mantener y actualizar sin depender de conocimientos técnicos.",
+    ],
+    link: "https://caballeroromoasesores.com",
+    image: caballeroromo,
+    tags: [TAGS.WORDPRESS],
+  },
+  {
+    title: "Grup Ateneas",
+    description: [
+      "Web corporativa para presentar la empresa, sus servicios y sus datos de contacto de forma clara y accesible para sus clientes.",
+      "Construida con WordPress para ofrecer al cliente un desarrollo rápido y un sitio fácil de mantener y actualizar sin depender de conocimientos técnicos.",
+    ],
+    link: "https://grupateneas.es",
+    image: grupateneas,
+    tags: [TAGS.WORDPRESS],
+  },
+  {
     title: "Solar",
     description: [
-      "Aplicacion Web para la gestión de plantas solares. Permite a los usuarios crear, editar y eliminar plantas solares, así como registrar y visualizar datos de producción y consumo a través de gráficos interactivos.",
+      "Aplicación web para la gestión de plantas solares, donde los usuarios pueden crear, editar y eliminar plantas, además de registrar y consultar datos de producción y consumo.",
+      "Construida con Angular y Tailwind CSS para una interfaz modular y mantenible, Supabase como backend para almacenar y consultar los datos en tiempo real.",
     ],
-
     link: "https://solar-oscaresteve.vercel.app",
     github: "https://github.com/oscaresteve/solar",
     image: solar,
@@ -58,7 +122,8 @@ const PROJECTS = [
   {
     title: "2048 adventure",
     description: [
-      "Juego de puzzle estilo 2048 con niveles y ranking online. Los jugadores pueden registrarse y competir por la mayor puntuación.",
+      "Juego de puzzle estilo 2048 con niveles progresivos y ranking online, donde los jugadores pueden registrarse y competir por la mayor puntuación.",
+      "Desarrollado con JavaScript puro y Vite para un entorno de desarrollo rápido, Tailwind CSS para el diseño, y Supabase para guardar usuarios y puntuaciones en el ranking.",
     ],
     link: "https://2048adventure.vercel.app",
     github: "https://github.com/oscaresteve/2048-adventure",
@@ -90,7 +155,7 @@ const PROJECTS = [
         </ul>
         <a href={link} target="_blank" rel="noopener">
           <Image
-            class="hover:scale-101 transition duration-300 my-2 cursor-pointer"
+            class="hover:scale-101 transition duration-300 my-4 cursor-pointer rounded-xl"
             src={image}
             alt={`Captura de pantalla del proyecto ${title}`}
           />
@@ -105,15 +170,17 @@ const PROJECTS = [
             <ExternalLink class="size-4" />
             Vista previa
           </a>
-          <a
-            href={github}
-            class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
-            target="_blank"
-            rel="noopener"
-          >
-            <GitHub class="size-4" />
-            Código
-          </a>
+          {github && (
+            <a
+              href={github}
+              class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
+              target="_blank"
+              rel="noopener"
+            >
+              <GitHub class="size-4" />
+              Código
+            </a>
+          )}
         </nav>
       </article>
     ))
