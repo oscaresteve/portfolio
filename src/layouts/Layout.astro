@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
-import "@fontsource-variable/onest/wght.css";
+import satoshiMedium from "../assets/fonts/Satoshi-Medium.woff2";
+import cabinetExtraBold from "../assets/fonts/CabinetGrotesk-Extrabold.woff2";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -22,6 +23,9 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preload" href={satoshiMedium} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={cabinetExtraBold} as="font" type="font/woff2" crossorigin />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <Analytics />
@@ -44,7 +48,6 @@ const { title, description } = Astro.props;
   }
 
   html {
-    font-family: "Onest Variable", sans-serif;
     /* Animacion para el scroll */
     scroll-behavior: smooth;
   }
