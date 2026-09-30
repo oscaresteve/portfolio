@@ -5,7 +5,7 @@ import MailSearch from "../icons/MailSearch.astro";
 import SocialPill from "./SocialPill.astro";
 ---
 
-<section class="mx-auto flex w-full min-h-[75dvh] max-w-7xl flex-col px-10">
+<section class="mx-auto flex w-full min-h-[calc(100dvh-4.5rem)] max-w-7xl flex-col px-10">
   <div class="flex flex-1 flex-col justify-center">
     <h1 class="font-display text-9xl">Óscar Esteve</h1>
     <p class="mt-10 text-lg text-end text-muted-foreground">
@@ -13,17 +13,17 @@ import SocialPill from "./SocialPill.astro";
       Especializado en frontend y diseño de interfaces limpias e intuitivas.
     </p>
   </div>
-  <nav class="flex flex-wrap items-center gap-x-8 py-6">
+  <nav class="flex flex-wrap items-center justify-end gap-x-10 py-6">
     <SocialPill href="https://linkedin.com/in/oscaresteve">
-      <LinkedIn class="size-4" />
+      <LinkedIn class="size-3" />
       LinkedIn
     </SocialPill>
     <SocialPill href="https://github.com/oscaresteve">
-      <GitHub class="size-4" />
+      <GitHub class="size-3" />
       GitHub
     </SocialPill>
     <SocialPill href="mailto:oscarestevea24@gmail.com">
-      <MailSearch class="size-4" />
+      <MailSearch class="size-3" />
       oscarestevea24@gmail.com
     </SocialPill>
   </nav>
