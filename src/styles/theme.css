@@ -1,4 +1,13 @@
 @theme {
   --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #fffff0; /*Ivory*/
+  --color-foreground: #1a1110; /*Coffee Bean*/
+
+  --color-muted: #f0ead6; /*Eggshell*/
+  --color-muted-foreground: #645452; /*Taupe Grey*/
+
+  --color-primary: #993300; /*Rusted Brown*/
+  --color-primary-foreground: #fffff0; /*Ivory*/
 }
