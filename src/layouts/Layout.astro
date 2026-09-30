@@ -30,12 +30,7 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <Analytics />
   </head>
-  <body>
-    <!-- Efecto para el background -->
-    <div
-      class="fixed -z-1 h-full w-full bg-[radial-gradient(#222222_1px,transparent_1px)] bg-size-[16px_16px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
-    >
-    </div>
+  <body class="bg-background text-foreground antialiased">
     <Header />
     <slot />
     <Footer />
@@ -43,22 +38,12 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
-  :root {
-    color-scheme: dark;
-  }
-
   html {
     /* Animacion para el scroll */
     scroll-behavior: smooth;
   }
 
   body {
-    background: #050505;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-
     /* Deshabilitar las animaciones cuando el usuario las tiene desactivadas */
     @media (prefers-reduced-motion: reduce) {
       html {

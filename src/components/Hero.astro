@@ -1,0 +1,30 @@
+---
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import MailSearch from "../icons/MailSearch.astro";
+import SocialPill from "./SocialPill.astro";
+---
+
+<section class="mx-auto flex w-full min-h-[75dvh] max-w-7xl flex-col px-10">
+  <div class="flex flex-1 flex-col justify-center">
+    <h1 class="font-display text-9xl">Óscar Esteve</h1>
+    <p class="mt-10 text-lg text-end text-muted-foreground">
+      Desarrollador de Aplicaciones Web y Multiplataforma de Valencia, España.<br />
+      Especializado en frontend y diseño de interfaces limpias e intuitivas.
+    </p>
+  </div>
+  <nav class="flex flex-wrap items-center gap-x-8 py-6">
+    <SocialPill href="https://linkedin.com/in/oscaresteve">
+      <LinkedIn class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/oscaresteve">
+      <GitHub class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="mailto:oscarestevea24@gmail.com">
+      <MailSearch class="size-4" />
+      oscarestevea24@gmail.com
+    </SocialPill>
+  </nav>
+</section>
