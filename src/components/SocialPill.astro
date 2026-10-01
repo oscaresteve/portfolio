@@ -1,5 +1,7 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { class: className, href, ...rest } = Astro.props;
+
+const isExternal = typeof href === "string" && href.startsWith("http");
 ---
 
 <a
@@ -7,9 +9,10 @@ const { class: className, ...rest } = Astro.props;
     "inline-flex items-center gap-x-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-primary",
     className,
   ]}
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener" : undefined}
   {...rest}
-  target="_blank"
-  rel="noopener"
 >
   <slot />
 </a>
