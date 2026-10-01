@@ -1,4 +1,6 @@
 import type { ImageMetadata } from "astro";
+
+import { t } from "../i18n";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 
 import Angular from "../icons/Angular.astro";
@@ -15,21 +17,23 @@ import Tailwind from "../icons/Tailwind.astro";
 import Vite from "../icons/Vite.astro";
 import WordPress from "../icons/Wordpress.astro";
 
-import adventure from "../assets/2048adventure.png";
-import graphly from "../assets/graphly.png";
-import gruasytransportesryp from "../assets/gruasytransportesryp.png";
-import solar from "../assets/solar.png";
+import adventure from "../assets/projects/2048-adventure/cover.png";
+import graphly from "../assets/projects/graphly/cover.png";
+import gruasytransportesryp from "../assets/projects/gruas-y-transportes-ryp/cover.png";
+import solar from "../assets/projects/solar/cover.png";
 
 export type Tag = {
   name: string;
   icon: AstroComponentFactory;
 };
 
+export type ProjectSlug = keyof typeof t.projects.items;
+
 export type Project = {
-  title: string;
-  description: string[];
-  link: string;
-  github?: string;
+  slug: ProjectSlug;
+  year: string;
+  liveUrl?: string;
+  repoUrl?: string;
   image: ImageMetadata;
   tags: Tag[];
 };
@@ -91,45 +95,33 @@ export const TAGS = {
 
 export const PROJECTS: Project[] = [
   {
-    title: "Graphly",
-    description: [
-      "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
-      "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz.",
-    ],
-    link: "https://graphly.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/graphly",
+    slug: "graphly",
+    year: "TODO: año",
+    liveUrl: "https://graphly.oscaresteve.dev",
+    repoUrl: "https://github.com/oscaresteve/graphly",
     image: graphly,
     tags: [TAGS.NEXT, TAGS.NEONDB, TAGS.DRIZZLEORM, TAGS.CLERK, TAGS.TAILWIND, TAGS.SHADCN],
   },
   {
-    title: "Grúas y transportes RYP",
-    description: [
-      "Una de las varias páginas web para clientes que desarrollé durante mis prácticas en Grup Apunts.",
-      "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente.",
-    ],
-    link: "https://gruasytransportesryp.es",
+    slug: "gruas-y-transportes-ryp",
+    year: "2026",
+    liveUrl: "https://gruasytransportesryp.es",
     image: gruasytransportesryp,
     tags: [TAGS.WORDPRESS],
   },
   {
-    title: "Solar",
-    description: [
-      "Aplicación web para la gestión de plantas solares, desarrollada como proyecto final del ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
-      "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio.",
-    ],
-    link: "https://solar.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/solar",
+    slug: "solar",
+    year: "TODO: año",
+    liveUrl: "https://solar.oscaresteve.dev",
+    repoUrl: "https://github.com/oscaresteve/solar",
     image: solar,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
   },
   {
-    title: "2048 Adventure",
-    description: [
-      "Juego de puzles inspirado en 2048, desarrollado durante el ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
-      "Desarrollado con JavaScript Vanilla para profundizar en los fundamentos del lenguaje, Tailwind CSS para el diseño de la interfaz y Supabase para gestionar usuarios y almacenar las puntuaciones del ranking.",
-    ],
-    link: "https://2048-adventure.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/2048-adventure",
+    slug: "2048-adventure",
+    year: "TODO: año",
+    liveUrl: "https://2048-adventure.oscaresteve.dev",
+    repoUrl: "https://github.com/oscaresteve/2048-adventure",
     image: adventure,
     tags: [TAGS.JAVASCRIPT, TAGS.VITE, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
   },

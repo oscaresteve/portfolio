@@ -2,10 +2,12 @@
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
 import satoshiMedium from "../assets/fonts/Satoshi-Medium.woff2";
+import satoshiBlackItalic from "../assets/fonts/Satoshi-BlackItalic.woff2";
 import spaceGroteskBold from "../assets/fonts/SpaceGrotesk-Bold.woff2";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { t } from "../i18n";
 
 interface Props {
   title: string;
@@ -16,7 +18,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={t.meta.lang} class="scroll-smooth motion-reduce:scroll-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -24,6 +26,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preload" href={satoshiMedium} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={satoshiBlackItalic} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={spaceGroteskBold} as="font" type="font/woff2" crossorigin />
 
     <meta name="generator" content={Astro.generator} />
@@ -37,18 +40,3 @@ const { title, description } = Astro.props;
   </body>
 </html>
 
-<style is:global>
-  html {
-    /* Animacion para el scroll */
-    scroll-behavior: smooth;
-  }
-
-  body {
-    /* Deshabilitar las animaciones cuando el usuario las tiene desactivadas */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
-  }
-</style>

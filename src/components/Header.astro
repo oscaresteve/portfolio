@@ -1,8 +1,12 @@
+---
+import { t } from "../i18n";
+---
+
 <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-10 h-18">
-  <span class="font-display text-sm tracking-tight text-foreground">/oscaresteve</span>
+  <span class="font-display text-sm tracking-tight text-muted-foreground">{t.header.brand}</span>
   <nav class="flex items-center gap-x-8 text-sm text-muted-foreground">
-    <a class="transition-colors hover:text-primary" href="#proyectos">Proyectos</a>
-    <a class="transition-colors hover:text-primary" href="#experiencia">Experiencia</a>
-    <a class="transition-colors hover:text-primary" href="#sobre-mi">Sobre mí</a>
+    <a class="transition-colors duration-300 hover:text-primary" href="#proyectos">{t.header.nav.projects}</a>
+    <a class="transition-colors duration-300 hover:text-primary" href="#experiencia">{t.header.nav.experience}</a>
+    <a class="transition-colors duration-300 hover:text-primary" href="#sobre-mi">{t.header.nav.about}</a>
   </nav>
 </header>

@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "lang": "es",
+    "title": "Óscar Esteve · Desarrollador Full-Stack",
+    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Aplicaciones web con Symfony, React y WordPress, y proyectos propios."
+  },
+  "header": {
+    "brand": "/oscaresteve",
+    "nav": {
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "about": "Sobre mí"
+    }
+  },
+  "hero": {
+    "name": "Óscar Esteve",
+    "role": "Full-Stack",
+    "subtitle": "Desarrollo aplicaciones web de principio a fin, desde Alzira, Valencia.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "oscarestevea24@gmail.com"
+    }
+  },
+  "showcase": {
+    "imageAlt": "Panel de Graphly con la evolución de una métrica en un gráfico de líneas."
+  },
+  "sections": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "about": "Sobre mí"
+  },
+  "projects": {
+    "live": "Ver proyecto →",
+    "repo": "Código",
+    "items": {
+      "graphly": {
+        "title": "Graphly",
+        "summary": "Herramienta para crear métricas personales, registrar entradas y consultarlas en gráficos interactivos desde un único panel.",
+        "role": "Diseño y desarrollo",
+        "imageAlt": "Panel de Graphly con la evolución de una métrica en un gráfico de líneas.",
+        "description": [
+          "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
+          "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz."
+        ]
+      },
+      "gruas-y-transportes-ryp": {
+        "title": "Grúas y transportes RYP",
+        "summary": "Web corporativa de una empresa de grúas y transportes, construida para que el cliente mantenga sus contenidos sin tocar código.",
+        "role": "Desarrollo en prácticas",
+        "imageAlt": "Portada de la web de Grúas y transportes RYP con un camión grúa y los servicios de la empresa.",
+        "description": [
+          "Una de las varias páginas web para clientes que desarrollé durante mis prácticas en Grup Apunts.",
+          "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente."
+        ]
+      },
+      "solar": {
+        "title": "Solar",
+        "summary": "Aplicación web para la gestión de plantas solares. Se ejecuta por completo en el cliente y usa Supabase como backend.",
+        "role": "Diseño y desarrollo",
+        "imageAlt": "Pantalla de gestión de plantas solares de Solar.",
+        "description": [
+          "Aplicación web para la gestión de plantas solares, desarrollada como proyecto final del ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
+          "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio."
+        ]
+      },
+      "2048-adventure": {
+        "title": "2048 Adventure",
+        "summary": "Juego de puzles inspirado en 2048, con cuentas de usuario y un ranking de puntuaciones.",
+        "role": "Diseño y desarrollo",
+        "imageAlt": "Tablero de 2048 Adventure durante una partida.",
+        "description": [
+          "Juego de puzles inspirado en 2048, desarrollado durante el ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
+          "Desarrollado con JavaScript Vanilla para profundizar en los fundamentos del lenguaje, Tailwind CSS para el diseño de la interfaz y Supabase para gestionar usuarios y almacenar las puntuaciones del ranking."
+        ]
+      }
+    }
+  },
+  "experience": [
+    {
+      "date": "Marzo 2026 — Junio 2026",
+      "job": "Desarrollador Web",
+      "title": "Grup Apunts",
+      "description": "Implementé nuevas funcionalidades en aplicaciones web con Symfony y adapté aplicaciones a su versión móvil con Flutter. También creé webs corporativas y tiendas online con WordPress, y trabajé en el mantenimiento y el SEO de sitios de empresas y comercios locales."
+    },
+    {
+      "date": "Marzo 2024 — Junio 2024",
+      "job": "Desarrollador Web",
+      "title": "AELE, Armarios Levante",
+      "description": "Desarrollé con React el presupuestador web de la empresa e integré en él el catálogo y sus combinaciones. Me encargué del despliegue a producción."
+    }
+  ],
+  "about": {
+    "bio": "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Fuera del trabajo mantengo proyectos propios con Next, Astro y Express, que es donde pruebo herramientas nuevas antes de llevarlas a un proyecto real.",
+    "educationTitle": "Formación",
+    "education": [
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
+        "place": "IES Lluís Simarro",
+        "date": "2025 — 2026"
+      },
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2022 — 2024"
+      },
+      {
+        "title": "Técnico en Sistemas Microinformáticos y Redes (SMR)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2020 — 2022"
+      }
+    ],
+    "languages": "Inglés (B1 certificado) · Español y valenciano nativos.",
+    "photoAlt": "Óscar Esteve, de frente y sobre fondo claro."
+  },
+  "footer": {
+    "tagline": "Siempre aprendiendo ✨",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}

@@ -2,43 +2,45 @@
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
 import ContainerSection from "../components/ContainerSection.astro";
-import Briefcase from "../icons/Briefcase.astro";
-import Code from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
-import User from "../icons/User.astro";
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
+import ProjectShot from "../components/ProjectShot.astro";
+import graphly from "../assets/projects/graphly/cover.png";
+import SectionTitle from "../components/SectionTitle.astro";
+import { PROJECTS } from "../data/projects";
+import { t } from "../i18n";
 ---
 
-<Layout
-  title="Portfolio de Óscar Esteve - Desarrollador y Programador Web"
-  description="Contrata a Óscar Esteve para crear tu aplicación web o móvil"
->
+<Layout title={t.meta.title} description={t.meta.description}>
   <main>
     <Hero />
 
-    <!-- <ContainerSection id="proyectos">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <Code class="size-8" />
-        Proyectos
-      </h2>
+    <ContainerSection class="gap-2!">
+      <span class="text-muted-foreground font-mono text-sm">
+        // [Descripcion de la captura del proyecto destacado]
+      </span>
+      <ProjectShot
+        src={graphly}
+        alt={t.showcase.imageAlt}
+        widths={[600, 1200, 1920]}
+        sizes="(min-width: 1360px) 1200px, calc(100vw - 5rem)"
+      />
+    </ContainerSection>
+
+    <ContainerSection id="proyectos" aria-label={t.sections.projects}>
+      <SectionTitle count={PROJECTS.length}>{t.sections.projects}</SectionTitle>
       <Projects />
     </ContainerSection>
 
-    <ContainerSection id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <Briefcase class="size-8" />
-        Experiencia
-      </h2>
+    <ContainerSection id="experiencia" aria-label={t.sections.experience}>
+      <SectionTitle count={t.experience.length}>{t.sections.experience}</SectionTitle>
       <Experience />
     </ContainerSection>
 
-    <ContainerSection id="sobre-mi">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center">
-        <User class="size-8" />
-        Sobre mí
-      </h2>
+    <ContainerSection id="sobre-mi" aria-label={t.sections.about}>
+      <SectionTitle>{t.sections.about}</SectionTitle>
       <About />
-    </ContainerSection> -->
+    </ContainerSection>
   </main>
 </Layout>

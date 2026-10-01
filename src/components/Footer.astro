@@ -1,26 +1,28 @@
 ---
 import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
+import MailSearch from "../icons/MailSearch.astro";
+import { t } from "../i18n";
+import SocialPill from "./SocialPill.astro";
 
-const today = new Date();
+const { social } = t.hero;
 ---
 
-<footer class="w-full max-w-3xl mx-auto mt-10 flex items-center justify-between p-4">
-  <div class="flex flex-col gap-0.5">
-    <span class="text-sm text-white/80">Siempre aprendiendo ✨</span>
-  </div>
+<footer class="mx-auto flex w-full max-w-7xl items-center justify-between px-10 h-18">
+  <span class="font-display text-sm tracking-tight text-muted-foreground">{t.header.brand}</span>
 
-  <nav class="flex items-center gap-3">
-    <a
-      href="https://www.linkedin.com/in/%C3%B3scar-esteve-aleixandre-629a11300/"
-      target="_blank"
-      rel="noopener"
-      aria-label="LinkedIn"
-    >
-      <LinkedIn class="size-4 text-white/70 hover:text-white transition-colors" />
-    </a>
-    <a href="https://github.com/oscaresteve" target="_blank" rel="noopener" aria-label="GitHub">
-      <GitHub class="size-4 text-white/70 hover:text-white transition-colors" />
-    </a>
+  <nav class="flex flex-wrap items-center justify-end gap-x-10 py-6">
+    <SocialPill href="https://linkedin.com/in/oscaresteve">
+      <LinkedIn class="size-3" />
+      {social.linkedin}
+    </SocialPill>
+    <SocialPill href="https://github.com/oscaresteve">
+      <GitHub class="size-3" />
+      {social.github}
+    </SocialPill>
+    <SocialPill href={`mailto:${social.email}`}>
+      <MailSearch class="size-3" />
+      {social.email}
+    </SocialPill>
   </nav>
 </footer>

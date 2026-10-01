@@ -1,6 +1,13 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
 <a
-  class="inline-flex items-center gap-x-2 text-sm text-muted-foreground transition-colors hover:text-primary"
-  {...Astro.props}
+  class:list={[
+    "inline-flex items-center gap-x-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-primary",
+    className,
+  ]}
+  {...rest}
   target="_blank"
   rel="noopener"
 >

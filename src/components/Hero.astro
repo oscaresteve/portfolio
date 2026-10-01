@@ -3,28 +3,40 @@ import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import MailSearch from "../icons/MailSearch.astro";
 import SocialPill from "./SocialPill.astro";
+import { t } from "../i18n";
+
+const { name, role, subtitle, social } = t.hero;
 ---
 
-<section class="mx-auto flex w-full min-h-[calc(100dvh-4.5rem)] max-w-7xl flex-col px-10">
-  <div class="flex flex-1 flex-col justify-center">
-    <h1 class="font-display text-9xl">Óscar Esteve</h1>
-    <p class="mt-10 text-lg text-end text-muted-foreground">
-      Desarrollador de Aplicaciones Web y Multiplataforma de Valencia, España.<br />
-      Especializado en frontend y diseño de interfaces limpias e intuitivas.
-    </p>
+<section class="mx-auto flex min-h-[calc(100dvh-4.5rem)] w-full max-w-7xl flex-col px-10">
+  <div class="flex flex-1 flex-col justify-center pt-10 pb-20">
+    <div class="grid lg:grid-cols-[auto_1fr] lg:items-baseline-last lg:gap-x-10">
+      <h1 class="contents">
+        <span class="font-display text-hero lg:col-span-2 lg:col-start-1 lg:row-start-1">
+          {name}<span class="sr-only">,</span>
+        </span>
+        <span class="text-outline font-sans text-hero font-black italic lg:col-start-1 lg:row-start-2">{role}</span>
+      </h1>
+      <p
+        class="mt-8 max-w-[32ch] text-base text-muted-foreground md:justify-self-end lg:col-start-2 lg:row-start-2 lg:mt-0 xl:text-lg"
+      >
+        {subtitle}
+      </p>
+    </div>
   </div>
+
   <nav class="flex flex-wrap items-center justify-end gap-x-10 py-6">
     <SocialPill href="https://linkedin.com/in/oscaresteve">
       <LinkedIn class="size-3" />
-      LinkedIn
+      {social.linkedin}
     </SocialPill>
     <SocialPill href="https://github.com/oscaresteve">
       <GitHub class="size-3" />
-      GitHub
+      {social.github}
     </SocialPill>
-    <SocialPill href="mailto:oscarestevea24@gmail.com">
+    <SocialPill href={`mailto:${social.email}`}>
       <MailSearch class="size-3" />
-      oscarestevea24@gmail.com
+      {social.email}
     </SocialPill>
   </nav>
 </section>

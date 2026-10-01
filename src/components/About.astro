@@ -1,32 +1,43 @@
 ---
 import { Image } from "astro:assets";
+import SectionTitle from "./SectionTitle.astro";
+import { t } from "../i18n";
 import oscaresteve from "../assets/foto-perfil-camisa.webp";
+
+const { bio, educationTitle, education, languages, photoAlt } = t.about;
 ---
 
-<article class="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-  <div class="prose text-white/90">
-    <p>
-      Mi nombre es <span class="text-blue-300">Óscar Esteve</span>, tengo 22 años y vivo en Alzira, Valencia. Desde
-      pequeño me ha interesado la tecnología y entender cómo funcionan las cosas. Esa curiosidad, me llevó a dedicarme
-      al desarrollo web.
-    </p>
-    <p>
-      He cursado los ciclos de <span class="text-blue-300">TSMR, DAM y DAW</span>, donde he adquirido una base sólida
-      tanto en programación como en desarrollo de aplicaciones. Actualmente, mis principales tecnologías son
-      <span class="text-blue-300">JavaScript, React, Angular y Tailwind CSS </span>. Aunque me interesa el desarrollo en
-      general, la parte que más me motiva es el <span class="text-blue-300">frontend</span>, ya que me permite
-      transformar las ideas en un producto final, funcional y centrado en ofrecer la mejor experiencia posible.
-    </p>
-    <p>
-      Me considero una persona <span class="text-blue-300">proactiva</span>, con facilidad para aprender y siempre con
-      ganas de seguir mejorando.
-    </p>
+<article class="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
+  <div class="flex flex-col gap-y-8 md:col-span-7">
+    <p class="max-w-prose text-muted-foreground">{bio}</p>
+
+    <div class="flex flex-col gap-y-4">
+      <SectionTitle as="h3">{educationTitle}</SectionTitle>
+
+      <ol class="flex flex-col gap-y-4">
+        {
+          education.map(({ title, place, date }) => (
+            <li class="flex flex-col gap-y-1">
+              <p class="text-foreground">{title}</p>
+              <p class="font-mono text-xs italic tracking-widest text-muted-foreground">
+                {place} · {date}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <p class="text-sm text-muted-foreground">{languages}</p>
+    </div>
   </div>
-  <div class="mx-auto w-full max-w-sm md:justify-self-end">
+
+  <div class="md:col-span-5">
     <Image
       src={oscaresteve}
-      alt="Retrato de Óscar Esteve"
-      class="h-auto w-full rounded-2xl object-cover shadow-lg"
+      alt={photoAlt}
+      class="h-auto w-full object-cover"
+      widths={[480, 960]}
+      sizes="(min-width: 768px) 477px, calc(100vw - 5rem)"
       loading="lazy"
     />
   </div>

@@ -1,6 +1,7 @@
 @theme {
   --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-background: #fffff0; /*Ivory*/
   --color-foreground: #1a1110; /*Coffee Bean*/
@@ -9,5 +10,7 @@
   --color-muted-foreground: #645452; /*Taupe Grey*/
 
   --color-primary: #993300; /*Rusted Brown*/
-  --color-primary-foreground: #fffff0; /*Ivory*/
+
+  --text-hero: clamp(2rem, calc((100vw - 5rem) * 0.1515), 11.4rem);
+  --text-hero--line-height: 0.92;
 }

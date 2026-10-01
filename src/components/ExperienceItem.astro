@@ -5,15 +5,16 @@ interface Props {
   title: string;
   description: string;
 }
+
 const { date, job, title, description } = Astro.props;
 ---
 
-<div class="absolute size-3 bg-white rounded-full mt-1.5 -inset-s-1.5"></div>
+<article class="flex flex-col gap-y-2">
+  <p class="font-mono text-xs italic tracking-widest text-muted-foreground">{date}</p>
 
-<article class="prose">
-  <h4 class="text-sm leading-none text-white/60">{date}</h4>
-  <h3 class="text-lg text-blue-300 my-2">
-    {title}<span class="text-white/70"> - {job}</span>
+  <h3 class="font-display text-3xl text-foreground">
+    {title}<span class="text-muted-foreground"> · {job}</span>
   </h3>
-  <p class="mb-4 font-normal text-white/80">{description}</p>
+
+  <p class="max-w-prose text-sm text-muted-foreground">{description}</p>
 </article>
