@@ -22,59 +22,62 @@
       "email": "oscarestevea24@gmail.com"
     }
   },
-  "showcase": {
-    "imageAlt": "Panel de Graphly con la evolución de una métrica en un gráfico de líneas."
-  },
   "sections": {
+    "showcase": "Captura destacada",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "about": "Sobre mí"
+    "about": "Sobre mí",
+    "cover": "Captura de portada"
   },
   "projects": {
     "live": "Ver proyecto →",
     "repo": "Código",
+    "back": "Volver a proyectos",
+    "details": "Detalles",
     "items": {
       "graphly": {
         "title": "Graphly",
         "summary": "Herramienta para crear métricas personales, registrar entradas y consultarlas en gráficos interactivos desde un único panel.",
-        "role": "Diseño y desarrollo",
-        "imageAlt": "Panel de Graphly con la evolución de una métrica en un gráfico de líneas.",
+        "imageAlt": "Dashboard de Graphly",
         "description": [
           "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
           "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz."
+        ],
+        "steps": [
+          "Inicias sesión con tu cuenta.",
+          "Ves todas tus métricas y sus últimas entradas de un vistazo.",
+          "También puedes registrar desde el dashboard la entrada de hoy de una métrica, si todavía no lo has hecho.",
+          "Revisas la evolución de una métrica en un gráfico interactivo y filtras por rangos de fechas.",
+          "Puedes filtrar incluso por un rango de fechas personalizado y ver la evolución en ese periodo.",
+          "Registras entradas pasadas de una métrica, por si te has olvidado de hacerlo.",
+          "También puedes editar entradas pasadas, por si te has equivocado al registrarlas.",
+          "Creas nuevas métricas eligiendo el nombre, una descripción y la unidad de medida que las representa.",
+          "Ajustas zona horaria, tema e idioma según tus preferencias."
         ]
       },
       "gruas-y-transportes-ryp": {
         "title": "Grúas y transportes RYP",
-        "summary": "Web corporativa de una empresa de grúas y transportes, construida para que el cliente mantenga sus contenidos sin tocar código.",
-        "role": "Desarrollo en prácticas",
+        "summary": "Web corporativa de una empresa de grúas y transportes, con optimización de SEO local.",
         "imageAlt": "Portada de la web de Grúas y transportes RYP con un camión grúa y los servicios de la empresa.",
         "description": [
           "Una de las varias páginas web para clientes que desarrollé durante mis prácticas en Grup Apunts.",
-          "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente."
-        ]
+          "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente.",
+          "Optimicé el SEO local para mejorar la visibilidad de la emrpresa en los resultados de búsqueda de Google y facilitar que los clientes la encuentren."
+        ],
+        "steps": []
       },
       "solar": {
         "title": "Solar",
         "summary": "Aplicación web para la gestión de plantas solares. Se ejecuta por completo en el cliente y usa Supabase como backend.",
-        "role": "Diseño y desarrollo",
         "imageAlt": "Pantalla de gestión de plantas solares de Solar.",
         "description": [
           "Aplicación web para la gestión de plantas solares, desarrollada como proyecto final del ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
           "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio."
-        ]
-      },
-      "2048-adventure": {
-        "title": "2048 Adventure",
-        "summary": "Juego de puzles inspirado en 2048, con cuentas de usuario y un ranking de puntuaciones.",
-        "role": "Diseño y desarrollo",
-        "imageAlt": "Tablero de 2048 Adventure durante una partida.",
-        "description": [
-          "Juego de puzles inspirado en 2048, desarrollado durante el ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
-          "Desarrollado con JavaScript Vanilla para profundizar en los fundamentos del lenguaje, Tailwind CSS para el diseño de la interfaz y Supabase para gestionar usuarios y almacenar las puntuaciones del ranking."
-        ]
+        ],
+        "steps": []
       }
-    }
+    },
+    "walkthrough": "Recorrido"
   },
   "experience": [
     {
@@ -87,7 +90,7 @@
       "date": "Marzo 2024 — Junio 2024",
       "job": "Desarrollador Web",
       "title": "AELE, Armarios Levante",
-      "description": "Desarrollé con React el presupuestador web de la empresa e integré en él el catálogo y sus combinaciones. Me encargué del despliegue a producción."
+      "description": "Desarrollé con React el presupuestador web de la empresa, implementando herramientas de cálculo y personalización de armarios para agilizar la elaboración de presupuestos y mejorar la experiencia del cliente."
     }
   ],
   "about": {

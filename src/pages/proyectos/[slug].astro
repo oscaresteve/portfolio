@@ -1,0 +1,116 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import Layout from "../../layouts/Layout.astro";
+import ProjectShot from "../../components/ProjectShot.astro";
+import TagList from "../../components/TagList.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
+import { PROJECTS } from "../../data/projects";
+import { t } from "../../i18n";
+
+export const getStaticPaths = (() =>
+  PROJECTS.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }))) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { slug, liveUrl, repoUrl, image, tags, steps = [] } = project;
+
+const { back, walkthrough, live, repo, items } = t.projects;
+const { title, summary, imageAlt, description, steps: stepText } = items[slug];
+
+if (steps.length !== stepText.length) {
+  throw new Error(`[${slug}] ${steps.length} capturas de recorrido pero ${stepText.length} textos. Deben coincidir.`);
+}
+
+const meta = "font-mono text-xs italic tracking-widest text-muted-foreground";
+const linkStyle = "transition-colors duration-300 hover:text-primary";
+---
+
+<Layout title={`${title} · ${t.hero.name}`} description={summary}>
+  <main>
+    <section class="mx-auto flex w-full max-w-7xl flex-col px-10 pt-10 pb-16">
+      <a
+        class:list={["w-fit leading-tight font-mono text-sm italic text-muted-foreground", linkStyle]}
+        href="/#proyectos"
+      >
+        // {back}
+      </a>
+
+      <h1 class="mt-12 text-balance font-display text-title">{title}</h1>
+
+      {
+        description.length > 0 && (
+          <div class="mt-12 flex max-w-prose flex-col gap-y-6 text-muted-foreground">
+            {description.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        )
+      }
+
+      <TagList tags={tags} class={`mt-20 ${meta}`} />
+
+      {
+        (liveUrl || repoUrl) && (
+          <p class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {liveUrl && (
+              <a class={linkStyle} href={liveUrl} target="_blank" rel="noopener">
+                {live}
+              </a>
+            )}
+            {repoUrl && (
+              <a class={linkStyle} href={repoUrl} target="_blank" rel="noopener">
+                {repo}
+              </a>
+            )}
+          </p>
+        )
+      }
+    </section>
+
+    <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.cover}>
+      <div class="mx-auto flex w-full max-w-7xl px-10">
+        <span class="font-mono text-sm italic text-muted-foreground">// {imageAlt}</span>
+      </div>
+
+      <ProjectShot
+        src={image}
+        alt={imageAlt}
+        aspect={null}
+        widths={[640, 1280, 1920, 2560, 2880]}
+        sizes="100vw"
+        loading="eager"
+      />
+    </section>
+
+    {
+      steps.length > 0 && (
+        <section class="mx-auto w-full max-w-7xl px-10 pt-20 pb-28" aria-label={walkthrough}>
+          <SectionTitle count={steps.length}>{walkthrough}</SectionTitle>
+
+          <ol class="mt-6 divide-y divide-muted">
+            {steps.map((shot, position) => (
+              <li class="grid gap-y-6 py-14 md:grid-cols-12 md:gap-x-10">
+                <p class="flex gap-x-5 md:col-span-4 items-baseline">
+                  <span class:list={["shrink-0 tabular-nums", meta]}>{String(position + 1).padStart(2, "0")}</span>
+                  <span class="text-balance">{stepText[position]}</span>
+                </p>
+
+                <ProjectShot
+                  class="md:col-span-8"
+                  src={shot}
+                  alt={stepText[position]}
+                  aspect={null}
+                  widths={[640, 1280, 1920]}
+                  sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 5rem)"
+                />
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+  </main>
+</Layout>

@@ -7,6 +7,8 @@ interface Props {
   alt: string;
   widths?: number[];
   sizes?: string;
+  aspect?: string | null;
+  loading?: "lazy" | "eager";
   class?: string;
 }
 
@@ -15,6 +17,8 @@ const {
   alt,
   widths = [320, 660, 1000, 1320],
   sizes = "(min-width: 1024px) 655px, (min-width: 768px) 48vw, calc(100vw - 7rem)",
+  aspect = "aspect-21/9",
+  loading = "lazy",
   class: className = "",
 } = Astro.props;
 
@@ -22,6 +26,16 @@ const width = Math.max(...widths);
 const height = Math.round((width * src.height) / src.width);
 ---
 
-<figure class:list={["aspect-21/9 overflow-hidden bg-muted", className]}>
-  <Image class="h-full w-full object-cover" src={src} alt={alt} width={width} height={height} widths={widths} sizes={sizes} loading="lazy" />
-</figure>
+<div class:list={[aspect, aspect && "overflow-hidden", "bg-muted", className]}>
+  <Image
+    class:list={["w-full", aspect ? "h-full object-cover" : "h-auto"]}
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    widths={widths}
+    sizes={sizes}
+    loading={loading}
+    fetchpriority={loading === "eager" ? "high" : undefined}
+  />
+</div>

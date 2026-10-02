@@ -6,7 +6,6 @@ import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
 import ProjectShot from "../components/ProjectShot.astro";
-import graphly from "../assets/projects/graphly/cover.png";
 import SectionTitle from "../components/SectionTitle.astro";
 import { PROJECTS } from "../data/projects";
 import { t } from "../i18n";
@@ -16,17 +15,19 @@ import { t } from "../i18n";
   <main>
     <Hero />
 
-    <ContainerSection class="gap-2!">
-      <span class="text-muted-foreground font-mono text-sm">
-        // [Descripcion de la captura del proyecto destacado]
-      </span>
+    <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.showcase}>
+      <div class="mx-auto flex w-full max-w-7xl px-10">
+        <span class="font-mono text-sm italic text-muted-foreground">// {t.projects.items.graphly.imageAlt}</span>
+      </div>
       <ProjectShot
-        src={graphly}
-        alt={t.showcase.imageAlt}
-        widths={[600, 1200, 1920]}
-        sizes="(min-width: 1360px) 1200px, calc(100vw - 5rem)"
+        src={PROJECTS[0].image}
+        alt={t.projects.items.graphly.imageAlt}
+        aspect={null}
+        widths={[640, 1280, 1920, 2560, 2880, 3840]}
+        sizes="100vw"
+        loading="eager"
       />
-    </ContainerSection>
+    </section>
 
     <ContainerSection id="proyectos" aria-label={t.sections.projects}>
       <SectionTitle count={PROJECTS.length}>{t.sections.projects}</SectionTitle>

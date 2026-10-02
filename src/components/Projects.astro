@@ -1,5 +1,6 @@
 ---
 import ProjectShot from "./ProjectShot.astro";
+import TagList from "./TagList.astro";
 import { PROJECTS } from "../data/projects";
 import { t } from "../i18n";
 
@@ -8,27 +9,27 @@ const { items, live, repo } = t.projects;
 
 <ol class="divide-y divide-muted [--indent:2rem] sm:[--indent:3rem]">
   {
-    PROJECTS.map(({ slug, year, liveUrl, repoUrl, image, tags }, position) => {
-      const { title, summary, role, imageAlt } = items[slug];
+    PROJECTS.map(({ slug, liveUrl, repoUrl, image, tags }, position) => {
+      const { title, summary, imageAlt } = items[slug];
 
       return (
         <li class="reveal-row group text-muted-foreground">
-          <a
-            class="flex flex-col gap-y-3 pt-8 pb-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-10"
-            href={`/proyectos/${slug}`}
-          >
+          <div class="flex flex-col gap-y-3 pt-8 pb-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-10">
             <h3 class="flex items-baseline font-display text-3xl leading-none sm:text-4xl lg:text-5xl">
               <span class="w-(--indent) shrink-0 font-mono text-xs italic tracking-widest tabular-nums">
                 {String(position + 1).padStart(2, "0")}
               </span>
 
-              <span class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary">
+              <a
+                class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary"
+                href={`/proyectos/${slug}`}
+              >
                 {title}
-              </span>
+              </a>
             </h3>
 
-            <p class="pl-(--indent) text-sm sm:pl-0 sm:text-right">{tags.map((tag) => tag.name).join(" · ")}</p>
-          </a>
+            <TagList tags={tags} class="pl-(--indent) text-sm sm:pl-0 sm:text-right" />
+          </div>
 
           <div class="reveal">
             <div class="reveal-clip">
@@ -37,10 +38,6 @@ const { items, live, repo } = t.projects;
 
                 <div class="flex flex-col gap-y-4 text-sm md:col-span-5 md:self-end">
                   <p class="max-w-prose">{summary}</p>
-
-                  <p class="font-mono text-xs italic tracking-widest">
-                    {role} · {year}
-                  </p>
 
                   {(liveUrl || repoUrl) && (
                     <p class="flex flex-wrap gap-x-6 gap-y-2">
