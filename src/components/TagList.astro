@@ -1,5 +1,5 @@
 ---
-import type { Tag } from "../data/projects";
+import type { Tag } from "../data/tags";
 
 interface Props {
   tags: Tag[];
@@ -14,14 +14,13 @@ const { tags, class: className } = Astro.props;
     tags.map((tag, position) => (
       <Fragment>
         {position > 0 && " · "}
-        <a
-          class="transition-colors duration-300 hover:text-primary"
-          href={tag.url}
-          target="_blank"
-          rel="noopener"
-        >
-          {tag.name}
-        </a>
+        {tag.url ? (
+          <a class="transition-colors duration-300 hover:text-primary" href={tag.url} target="_blank" rel="noopener">
+            {tag.name}
+          </a>
+        ) : (
+          tag.name
+        )}
       </Fragment>
     ))
   }

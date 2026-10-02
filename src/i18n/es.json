@@ -2,7 +2,7 @@
   "meta": {
     "lang": "es",
     "title": "Óscar Esteve · Desarrollador Full-Stack",
-    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Aplicaciones web con Symfony, React y WordPress, y proyectos propios."
+    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con React, Next.js, Angular y Symfony, y proyectos propios."
   },
   "header": {
     "brand": "/oscaresteve",
@@ -17,7 +17,7 @@
   "hero": {
     "name": "Óscar Esteve",
     "role": "Full-Stack",
-    "subtitle": "Desarrollo aplicaciones web de principio a fin, desde Alzira, Valencia.",
+    "subtitle": "Desarrollo aplicaciones web de principio a fin, cuidando todos los detalles. Desde Alzira, Valencia.",
     "social": {
       "linkedin": "LinkedIn",
       "github": "GitHub",
@@ -42,7 +42,7 @@
         "imageAlt": "Dashboard de Graphly",
         "description": [
           "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
-          "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz."
+          "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. Clerk se encarga de la autenticación, Drizzle ORM y Neon del acceso tipado a la base de datos, y Shadcn/UI de agilizar el desarrollo de la interfaz."
         ],
         "shots": [
           "Pantalla de inicio de sesión.",
@@ -59,11 +59,11 @@
       "gruas-y-transportes-ryp": {
         "title": "Grúas y transportes RYP",
         "summary": "Web corporativa de una empresa de grúas autocargantes y transporte, pensada para captar peticiones de presupuesto.",
-        "imageAlt": "Portada de la web de Grúas y transportes RYP, con un camión grúa en carretera y los botones de presupuesto y servicios.",
+        "imageAlt": "Portada de la web de Grúas y transportes RYP.",
         "description": [
           "Web corporativa para una empresa de grúas autocargantes y transporte en Valencia. Presenta los servicios, explica el proceso de contratación en tres pasos y recoge peticiones de presupuesto desde un formulario.",
           "El contacto está siempre a mano: teléfono fijo en la cabecera, botón flotante de WhatsApp en todas las páginas y formulario con el tipo de servicio y la descripción del trabajo. Incluye además selector de idioma y un widget de accesibilidad.",
-          "Una de las varias webs para clientes que desarrollé durante mis prácticas en Grup Apunts. Construida con WordPress para ofrecer un desarrollo rápido y un sitio que el cliente pueda mantener por su cuenta."
+          "Una de las varias webs para clientes que desarrollé durante mis prácticas en Grup Apunts. Construida con WordPress para ofrecer un desarrollo rápido y un sitio que el cliente pueda mantener por su cuenta, y repasada después en su posicionamiento para que la encuentren por los servicios que ofrece."
         ],
         "shots": [
           "Página «Sobre nosotros», con la presentación de la empresa.",
@@ -74,11 +74,11 @@
       "solar": {
         "title": "Solar",
         "summary": "Aplicación para gestionar plantas de generación eléctrica y llevar el registro de su producción y su consumo.",
-        "imageAlt": "Pantalla de inicio de Solar, con las plantas en tarjetas y una fotografía de cada instalación.",
+        "imageAlt": "Pantalla de inicio de Solar.",
         "description": [
           "Aplicación web para gestionar plantas de generación eléctrica. Cada planta guarda su capacidad instalada, sus coordenadas, una imagen y su estado, y acumula registros de producción y consumo que la aplicación resume en gráficos y en un balance por periodo.",
-          "El catálogo se recorre en tarjetas o en tabla, con filtros, ordenación y paginación; las plantas se sitúan sobre un mapa a partir de sus coordenadas, y se pueden marcar como favoritas para tenerlas a mano.",
-          "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio."
+          "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio.",
+          "Fue mi proyecto final del ciclo de Desarrollo de Aplicaciones Web, y el primero que planteé entero por mi cuenta: modelo de datos, interfaz y despliegue."
         ],
         "shots": [
           "Listado de plantas en tabla, con su capacidad, ubicación y estado, y los controles de filtrado y ordenación.",
@@ -100,17 +100,21 @@
       "date": "Marzo 2026 — Junio 2026",
       "job": "Desarrollador Web",
       "title": "Grup Apunts",
-      "description": "Implementé nuevas funcionalidades en aplicaciones web con Symfony y adapté aplicaciones a su versión móvil con Flutter. También creé webs corporativas y tiendas online con WordPress, y trabajé en el mantenimiento y el SEO de sitios de empresas y comercios locales."
+      "description": "Implementé nuevas funcionalidades en aplicaciones web con Symfony y llevé algunas de ellas a su versión móvil con Flutter. Entre el equipo de desarrollo a medida y el de marketing digital, creé también webs corporativas y tiendas online con WordPress, adaptadas a lo que cada cliente necesitaba, y me ocupé del mantenimiento y del SEO de sitios de empresas y comercios locales."
     },
     {
       "date": "Marzo 2024 — Junio 2024",
       "job": "Desarrollador Web",
       "title": "AELE, Armarios Levante",
-      "description": "Desarrollé con React el presupuestador web de la empresa, implementando herramientas de cálculo y personalización de armarios para agilizar la elaboración de presupuestos y mejorar la experiencia del cliente."
+      "description": "Desarrollé con React el presupuestador web de la empresa: integré el catálogo con todas sus combinaciones y añadí las herramientas de cálculo y personalización de armarios para agilizar la elaboración de presupuestos y mejorar la experiencia del cliente. Me encargué también de dejarlo desplegado en producción."
     }
   ],
   "about": {
-    "bio": "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Fuera del trabajo mantengo proyectos propios con Next, Astro y Express, que es donde pruebo herramientas nuevas antes de llevarlas a un proyecto real.",
+    "bio": [
+      "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Llegué al desarrollo por querer entender cómo funcionaba lo que usaba a diario, y esa curiosidad acabó en los ciclos de SMR, DAM y DAW.",
+      "Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Donde mejor me muevo es en el frontend, montando interfaces limpias y fáciles de usar.",
+      "Mantengo proyectos propios con Next, Astro y Express porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona."
+    ],
     "educationTitle": "Formación",
     "education": [
       {
@@ -129,6 +133,12 @@
         "date": "2020 — 2022"
       }
     ],
+    "stackTitle": "Tecnologías",
+    "stack": {
+      "frontend": "Frontend",
+      "backend": "Backend y datos",
+      "tools": "Herramientas"
+    },
     "languages": "Inglés (B1 certificado) · Español y valenciano nativos.",
     "photoAlt": "Óscar Esteve, de frente y sobre fondo claro."
   }

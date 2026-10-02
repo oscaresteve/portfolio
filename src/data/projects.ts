@@ -1,21 +1,7 @@
 import type { ImageMetadata } from "astro";
 
 import { t } from "../i18n";
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-
-import Angular from "../icons/Angular.astro";
-import Clerk from "../icons/Clerk.astro";
-import Css from "../icons/Css.astro";
-import DrizzleOrm from "../icons/DrizzleOrm.astro";
-import Html from "../icons/Html.astro";
-import JavaScript from "../icons/JavaScript.astro";
-import NeonDb from "../icons/NeonDb.astro";
-import Next from "../icons/Next.astro";
-import Shadcn from "../icons/Shadcn.astro";
-import Supabase from "../icons/Supabase.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import Vite from "../icons/Vite.astro";
-import WordPress from "../icons/Wordpress.astro";
+import { TAGS, type Tag } from "./tags";
 
 import graphlyDashboard from "../assets/projects/graphly/graphly-dashboard.png";
 import graphlyLogin from "../assets/projects/graphly/graphly-login.png";
@@ -42,12 +28,6 @@ import solarMapa from "../assets/projects/solar/solar-mapa.png";
 import solarFavoritos from "../assets/projects/solar/solar-favoritos.png";
 import solarCuenta from "../assets/projects/solar/solar-cuenta.png";
 
-export type Tag = {
-  name: string;
-  url: string;
-  icon: AstroComponentFactory;
-};
-
 export type ProjectSlug = keyof typeof t.projects.items;
 
 export type Project = {
@@ -60,74 +40,6 @@ export type Project = {
    *  `t.projects.items[slug].shots`, emparejada por posicion. */
   shots?: ImageMetadata[];
 };
-
-export const TAGS = {
-  ANGULAR: {
-    name: "Angular",
-    url: "https://angular.dev",
-    icon: Angular,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    url: "https://tailwindcss.com",
-    icon: Tailwind,
-  },
-  HTML: {
-    name: "HTML",
-    url: "https://developer.mozilla.org/docs/Web/HTML",
-    icon: Html,
-  },
-  CSS: {
-    name: "CSS",
-    url: "https://developer.mozilla.org/docs/Web/CSS",
-    icon: Css,
-  },
-  SUPABASE: {
-    name: "Supabase",
-    url: "https://supabase.com",
-    icon: Supabase,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    url: "https://developer.mozilla.org/docs/Web/JavaScript",
-    icon: JavaScript,
-  },
-  VITE: {
-    name: "Vite",
-    url: "https://vite.dev",
-    icon: Vite,
-  },
-  NEXT: {
-    name: "Next.js",
-    url: "https://nextjs.org",
-    icon: Next,
-  },
-  NEONDB: {
-    name: "Neon",
-    url: "https://neon.com",
-    icon: NeonDb,
-  },
-  DRIZZLEORM: {
-    name: "Drizzle ORM",
-    url: "https://orm.drizzle.team",
-    icon: DrizzleOrm,
-  },
-  CLERK: {
-    name: "Clerk",
-    url: "https://clerk.com",
-    icon: Clerk,
-  },
-  SHADCN: {
-    name: "shadcn/ui",
-    url: "https://ui.shadcn.com",
-    icon: Shadcn,
-  },
-  WORDPRESS: {
-    name: "WordPress",
-    url: "https://wordpress.org",
-    icon: WordPress,
-  },
-} satisfies Record<string, Tag>;
 
 export const PROJECTS: Project[] = [
   {
