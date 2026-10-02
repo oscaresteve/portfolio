@@ -1,12 +1,27 @@
 ---
 import { t } from "../i18n";
+
+const { brand, nav, cv, cvLabel } = t.header;
+const link = "transition-colors duration-300 hover:text-primary";
 ---
 
-<header class="mx-auto flex w-full max-w-7xl items-center justify-between px-10 h-18">
-  <span class="font-display text-sm tracking-tight text-muted-foreground">{t.header.brand}</span>
-  <nav class="flex items-center gap-x-8 text-sm text-muted-foreground">
-    <a class="transition-colors duration-300 hover:text-primary" href="#proyectos">{t.header.nav.projects}</a>
-    <a class="transition-colors duration-300 hover:text-primary" href="#experiencia">{t.header.nav.experience}</a>
-    <a class="transition-colors duration-300 hover:text-primary" href="#sobre-mi">{t.header.nav.about}</a>
-  </nav>
+<header class="mx-auto flex h-18 w-full max-w-7xl items-center justify-between gap-x-6 px-10">
+  <a class:list={["font-display text-sm tracking-tight text-muted-foreground", link]} href="/">{brand}</a>
+
+  <div class="flex items-center gap-x-8 text-sm">
+    <nav class="hidden items-center gap-x-8 text-muted-foreground sm:flex">
+      <a class={link} href="/#proyectos">{nav.projects}</a>
+      <a class={link} href="/#experiencia">{nav.experience}</a>
+      <a class={link} href="/#sobre-mi">{nav.about}</a>
+    </nav>
+
+    <a
+      class="text-primary transition-colors duration-300 hover:text-muted-foreground"
+      href="/cv-oscar-esteve.pdf"
+      aria-label={cvLabel}
+      download
+    >
+      {cv}
+    </a>
+  </div>
 </header>

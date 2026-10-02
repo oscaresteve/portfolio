@@ -10,7 +10,9 @@
       "projects": "Proyectos",
       "experience": "Experiencia",
       "about": "Sobre mí"
-    }
+    },
+    "cv": "Descargar CV",
+    "cvLabel": "Descargar currículum en PDF"
   },
   "hero": {
     "name": "Óscar Esteve",
