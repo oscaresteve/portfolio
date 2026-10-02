@@ -17,7 +17,7 @@ export const getStaticPaths = (() =>
 const { project } = Astro.props;
 const { slug, liveUrl, repoUrl, image, tags, shots = [] } = project;
 
-const { back, shots: shotsTitle, live, repo, items } = t.projects;
+const { back, shots: shotsTitle, zoom, live, repo, items } = t.projects;
 const { title, summary, imageAlt, description, shots: shotText } = items[slug];
 
 if (shots.length !== shotText.length) {
@@ -99,19 +99,68 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
                   <span class="text-balance">{shotText[position]}</span>
                 </p>
 
-                <ProjectShot
-                  class="border border-muted md:col-span-8"
-                  src={shot}
-                  alt={shotText[position]}
-                  aspect={null}
-                  widths={[640, 1280, 1920]}
-                  sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 5rem)"
-                />
+                <button
+                  class="group block w-full cursor-zoom-in md:col-span-8"
+                  type="button"
+                  data-shot
+                  aria-label={`${zoom}: ${shotText[position]}`}
+                >
+                  <ProjectShot
+                    class="border border-muted transition-colors duration-300 group-hover:border-primary group-focus-visible:border-primary"
+                    src={shot}
+                    alt={shotText[position]}
+                    aspect={null}
+                    widths={[640, 1280, 1920, 2560]}
+                    sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 5rem)"
+                  />
+                </button>
               </li>
             ))}
           </ol>
         </section>
       )
     }
+
+    <dialog
+      class="m-0 h-dvh max-h-none w-screen max-w-none cursor-zoom-out overflow-hidden bg-transparent p-0 backdrop:bg-foreground/30 backdrop:backdrop-blur-xl"
+      id="lightbox"
+      aria-label={shotsTitle}
+    >
+      <img class="size-full object-contain" data-lightbox-image alt="" />
+    </dialog>
   </main>
 </Layout>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("#lightbox");
+  const triggers = [...document.querySelectorAll<HTMLButtonElement>("[data-shot]")];
+
+  if (dialog && triggers.length > 0) {
+    const image = dialog.querySelector<HTMLImageElement>("[data-lightbox-image]")!;
+
+    let opener: HTMLButtonElement | null = null;
+
+    triggers.forEach((trigger) =>
+      trigger.addEventListener("click", () => {
+        const source = trigger.querySelector("img")!;
+
+        // Reusa el srcset de la miniatura y deja que el navegador escoja
+        // un candidato mayor ahora que ocupa todo el ancho.
+        image.srcset = source.srcset;
+        image.sizes = "100vw";
+        image.src = source.src;
+        image.alt = source.alt;
+
+        opener = trigger;
+        dialog.showModal();
+      }),
+    );
+
+    // Se cierra igual que se abre: pulsando sobre la imagen.
+    // Escape lo cierra de forma nativa y devuelve el foco por su cuenta.
+    dialog.addEventListener("click", () => {
+      dialog.close();
+      opener?.focus();
+    });
+  }
+</script>

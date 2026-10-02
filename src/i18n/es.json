@@ -33,7 +33,6 @@
     "live": "Ver proyecto →",
     "repo": "Código",
     "back": "Volver a proyectos",
-    "details": "Detalles",
     "items": {
       "graphly": {
         "title": "Graphly",
@@ -91,7 +90,8 @@
         ]
       }
     },
-    "shots": "Capturas"
+    "shots": "Capturas",
+    "zoom": "Ampliar"
   },
   "experience": [
     {
