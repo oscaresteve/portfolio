@@ -27,8 +27,20 @@ import graphlyMetric from "../assets/projects/graphly/graphly-metric.png";
 import graphlyMetricCustomRange from "../assets/projects/graphly/graphly-metric-custom-range.png";
 import graphlySettings from "../assets/projects/graphly/graphly-settings.png";
 
-import gruasytransportesryp from "../assets/projects/gruas-y-transportes-ryp/cover.png";
-import solar from "../assets/projects/solar/cover.png";
+import rypInicio from "../assets/projects/gruas-y-transportes-ryp/ryp-inicio.png";
+import rypSobreNosotros from "../assets/projects/gruas-y-transportes-ryp/ryp-sobre-nosotros.png";
+import rypComoTrabajamos from "../assets/projects/gruas-y-transportes-ryp/ryp-como-trabajamos.png";
+import rypContacto from "../assets/projects/gruas-y-transportes-ryp/ryp-contacto.png";
+
+import solarHome from "../assets/projects/solar/solar-home.png";
+import solarPlantas from "../assets/projects/solar/solar-plantas.png";
+import solarPlanta from "../assets/projects/solar/solar-planta.png";
+import solarNuevoRegistro from "../assets/projects/solar/solar-nuevo-registro.png";
+import solarRegistros from "../assets/projects/solar/solar-registros.png";
+import solarEditarPlanta from "../assets/projects/solar/solar-editar-planta.png";
+import solarMapa from "../assets/projects/solar/solar-mapa.png";
+import solarFavoritos from "../assets/projects/solar/solar-favoritos.png";
+import solarCuenta from "../assets/projects/solar/solar-cuenta.png";
 
 export type Tag = {
   name: string;
@@ -44,9 +56,9 @@ export type Project = {
   repoUrl?: string;
   image: ImageMetadata;
   tags: Tag[];
-  /** Capturas del recorrido. El texto de cada paso sale de
-   *  `t.projects.items[slug].steps`, emparejado por posicion. */
-  steps?: ImageMetadata[];
+  /** Capturas del proyecto. La descripcion de cada una sale de
+   *  `t.projects.items[slug].shots`, emparejada por posicion. */
+  shots?: ImageMetadata[];
 };
 
 export const TAGS = {
@@ -124,7 +136,7 @@ export const PROJECTS: Project[] = [
     repoUrl: "https://github.com/oscaresteve/graphly",
     image: graphlyDashboard,
     tags: [TAGS.NEXT, TAGS.NEONDB, TAGS.DRIZZLEORM, TAGS.CLERK, TAGS.TAILWIND, TAGS.SHADCN],
-    steps: [
+    shots: [
       graphlyLogin,
       graphlyDashboard,
       graphlyRegisterToday,
@@ -139,14 +151,25 @@ export const PROJECTS: Project[] = [
   {
     slug: "gruas-y-transportes-ryp",
     liveUrl: "https://gruasytransportesryp.es",
-    image: gruasytransportesryp,
+    image: rypInicio,
     tags: [TAGS.WORDPRESS],
+    shots: [rypSobreNosotros, rypComoTrabajamos, rypContacto],
   },
   {
     slug: "solar",
     liveUrl: "https://solar.oscaresteve.dev",
     repoUrl: "https://github.com/oscaresteve/solar",
-    image: solar,
+    image: solarHome,
     tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
+    shots: [
+      solarPlantas,
+      solarPlanta,
+      solarNuevoRegistro,
+      solarRegistros,
+      solarEditarPlanta,
+      solarMapa,
+      solarFavoritos,
+      solarCuenta,
+    ],
   },
 ];

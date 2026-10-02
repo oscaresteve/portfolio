@@ -15,13 +15,13 @@ export const getStaticPaths = (() =>
   }))) satisfies GetStaticPaths;
 
 const { project } = Astro.props;
-const { slug, liveUrl, repoUrl, image, tags, steps = [] } = project;
+const { slug, liveUrl, repoUrl, image, tags, shots = [] } = project;
 
-const { back, walkthrough, live, repo, items } = t.projects;
-const { title, summary, imageAlt, description, steps: stepText } = items[slug];
+const { back, shots: shotsTitle, live, repo, items } = t.projects;
+const { title, summary, imageAlt, description, shots: shotText } = items[slug];
 
-if (steps.length !== stepText.length) {
-  throw new Error(`[${slug}] ${steps.length} capturas de recorrido pero ${stepText.length} textos. Deben coincidir.`);
+if (shots.length !== shotText.length) {
+  throw new Error(`[${slug}] ${shots.length} capturas pero ${shotText.length} descripciones. Deben coincidir.`);
 }
 
 const meta = "font-mono text-xs italic tracking-widest text-muted-foreground";
@@ -82,26 +82,27 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
         widths={[640, 1280, 1920, 2560, 2880]}
         sizes="100vw"
         loading="eager"
+        class="border-y border-muted"
       />
     </section>
 
     {
-      steps.length > 0 && (
-        <section class="mx-auto w-full max-w-7xl px-10 pt-20 pb-28" aria-label={walkthrough}>
-          <SectionTitle count={steps.length}>{walkthrough}</SectionTitle>
+      shots.length > 0 && (
+        <section class="mx-auto w-full max-w-7xl px-10 pt-20 pb-28" aria-label={shotsTitle}>
+          <SectionTitle count={shots.length}>{shotsTitle}</SectionTitle>
 
           <ol class="mt-6 divide-y divide-muted">
-            {steps.map((shot, position) => (
+            {shots.map((shot, position) => (
               <li class="grid gap-y-6 py-14 md:grid-cols-12 md:gap-x-10">
                 <p class="flex gap-x-5 md:col-span-4 items-baseline">
                   <span class:list={["shrink-0 tabular-nums", meta]}>{String(position + 1).padStart(2, "0")}</span>
-                  <span class="text-balance">{stepText[position]}</span>
+                  <span class="text-balance">{shotText[position]}</span>
                 </p>
 
                 <ProjectShot
-                  class="md:col-span-8"
+                  class="border border-muted md:col-span-8"
                   src={shot}
-                  alt={stepText[position]}
+                  alt={shotText[position]}
                   aspect={null}
                   widths={[640, 1280, 1920]}
                   sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 5rem)"

@@ -43,41 +43,55 @@
           "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
           "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz."
         ],
-        "steps": [
-          "Inicias sesión con tu cuenta.",
-          "Ves todas tus métricas y sus últimas entradas de un vistazo.",
-          "También puedes registrar desde el dashboard la entrada de hoy de una métrica, si todavía no lo has hecho.",
-          "Revisas la evolución de una métrica en un gráfico interactivo y filtras por rangos de fechas.",
-          "Puedes filtrar incluso por un rango de fechas personalizado y ver la evolución en ese periodo.",
-          "Registras entradas pasadas de una métrica, por si te has olvidado de hacerlo.",
-          "También puedes editar entradas pasadas, por si te has equivocado al registrarlas.",
-          "Creas nuevas métricas eligiendo el nombre, una descripción y la unidad de medida que las representa.",
-          "Ajustas zona horaria, tema e idioma según tus preferencias."
+        "shots": [
+          "Pantalla de inicio de sesión.",
+          "Panel principal con todas las métricas y su última entrada registrada.",
+          "Registro de la entrada de hoy desde el propio panel.",
+          "Detalle de una métrica, con su gráfico interactivo y los filtros por rango de fechas.",
+          "Filtro por un rango de fechas personalizado.",
+          "Registro de una entrada con fecha anterior.",
+          "Edición de una entrada ya registrada.",
+          "Formulario de creación de una métrica, con su descripción y su unidad de medida.",
+          "Ajustes de zona horaria, tema e idioma."
         ]
       },
       "gruas-y-transportes-ryp": {
         "title": "Grúas y transportes RYP",
-        "summary": "Web corporativa de una empresa de grúas y transportes, con optimización de SEO local.",
-        "imageAlt": "Portada de la web de Grúas y transportes RYP con un camión grúa y los servicios de la empresa.",
+        "summary": "Web corporativa de una empresa de grúas autocargantes y transporte, pensada para captar peticiones de presupuesto.",
+        "imageAlt": "Portada de la web de Grúas y transportes RYP, con un camión grúa en carretera y los botones de presupuesto y servicios.",
         "description": [
-          "Una de las varias páginas web para clientes que desarrollé durante mis prácticas en Grup Apunts.",
-          "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente.",
-          "Optimicé el SEO local para mejorar la visibilidad de la emrpresa en los resultados de búsqueda de Google y facilitar que los clientes la encuentren."
+          "Web corporativa para una empresa de grúas autocargantes y transporte en Valencia. Presenta los servicios, explica el proceso de contratación en tres pasos y recoge peticiones de presupuesto desde un formulario.",
+          "El contacto está siempre a mano: teléfono fijo en la cabecera, botón flotante de WhatsApp en todas las páginas y formulario con el tipo de servicio y la descripción del trabajo. Incluye además selector de idioma y un widget de accesibilidad.",
+          "Una de las varias webs para clientes que desarrollé durante mis prácticas en Grup Apunts. Construida con WordPress para ofrecer un desarrollo rápido y un sitio que el cliente pueda mantener por su cuenta."
         ],
-        "steps": []
+        "shots": [
+          "Página «Sobre nosotros», con la presentación de la empresa.",
+          "El proceso de contratación, explicado en tres pasos.",
+          "Página de contacto, con el formulario de presupuesto y los datos de la empresa."
+        ]
       },
       "solar": {
         "title": "Solar",
-        "summary": "Aplicación web para la gestión de plantas solares. Se ejecuta por completo en el cliente y usa Supabase como backend.",
-        "imageAlt": "Pantalla de gestión de plantas solares de Solar.",
+        "summary": "Aplicación para gestionar plantas de generación eléctrica y llevar el registro de su producción y su consumo.",
+        "imageAlt": "Pantalla de inicio de Solar, con las plantas en tarjetas y una fotografía de cada instalación.",
         "description": [
-          "Aplicación web para la gestión de plantas solares, desarrollada como proyecto final del ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
+          "Aplicación web para gestionar plantas de generación eléctrica. Cada planta guarda su capacidad instalada, sus coordenadas, una imagen y su estado, y acumula registros de producción y consumo que la aplicación resume en gráficos y en un balance por periodo.",
+          "El catálogo se recorre en tarjetas o en tabla, con filtros, ordenación y paginación; las plantas se sitúan sobre un mapa a partir de sus coordenadas, y se pueden marcar como favoritas para tenerlas a mano.",
           "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio."
         ],
-        "steps": []
+        "shots": [
+          "Listado de plantas en tabla, con su capacidad, ubicación y estado, y los controles de filtrado y ordenación.",
+          "Ficha de una planta, con su información y el histórico de producción y consumo.",
+          "Formulario de registro, con la producción, el consumo y un mensaje opcional.",
+          "Tabla de registros, con el balance de cada uno y el gráfico del periodo.",
+          "Edición de una planta: datos, imagen, coordenadas y estado.",
+          "Mapa con todas las plantas situadas sobre sus coordenadas.",
+          "Plantas marcadas como favoritas.",
+          "Pantalla de cuenta, con los datos del perfil y la foto."
+        ]
       }
     },
-    "walkthrough": "Recorrido"
+    "shots": "Capturas"
   },
   "experience": [
     {
