@@ -5,7 +5,7 @@ import MailSearch from "../icons/MailSearch.astro";
 import SocialPill from "./SocialPill.astro";
 import { t } from "../i18n";
 
-const { name, role, subtitle, social } = t.hero;
+const { name, role, subtitle, social, availability } = t.hero;
 ---
 
 <section class="mx-auto flex min-h-[calc(100dvh-4.5rem)] w-full max-w-7xl flex-col px-10">
@@ -25,18 +25,21 @@ const { name, role, subtitle, social } = t.hero;
     </div>
   </div>
 
-  <nav class="flex flex-wrap items-center justify-end gap-x-10 py-6">
-    <SocialPill href="https://linkedin.com/in/oscaresteve">
-      <LinkedIn class="size-3" />
-      {social.linkedin}
-    </SocialPill>
-    <SocialPill href="https://github.com/oscaresteve">
-      <GitHub class="size-3" />
-      {social.github}
-    </SocialPill>
-    <SocialPill href={`mailto:${social.email}`}>
-      <MailSearch class="size-3" />
-      {social.email}
-    </SocialPill>
-  </nav>
+  <div class="flex justify-between gap-10 py-6">
+    <span class="text-sm text-primary">{`● ${availability}`}</span>
+    <nav class="flex flex-wrap items-center gap-x-10">
+      <SocialPill href="https://linkedin.com/in/oscaresteve">
+        <LinkedIn class="size-3" />
+        {social.linkedin}
+      </SocialPill>
+      <SocialPill href="https://github.com/oscaresteve">
+        <GitHub class="size-3" />
+        {social.github}
+      </SocialPill>
+      <SocialPill href={`mailto:${social.email}`}>
+        <MailSearch class="size-3" />
+        {social.email}
+      </SocialPill>
+    </nav>
+  </div>
 </section>
