@@ -28,7 +28,7 @@ const height = Math.round((width * src.height) / src.width);
 
 <div class:list={[aspect, aspect && "overflow-hidden", "bg-muted", className]}>
   <Image
-    class:list={["w-full", aspect ? "h-full object-cover" : "h-auto"]}
+    class:list={["w-full", aspect ? "h-full object-cover object-top" : "h-auto"]}
     src={src}
     alt={alt}
     width={width}
