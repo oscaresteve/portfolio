@@ -4,6 +4,7 @@ import Analytics from "@vercel/analytics/astro";
 import satoshiMedium from "../assets/fonts/Satoshi-Medium.woff2";
 import satoshiBlackItalic from "../assets/fonts/Satoshi-BlackItalic.woff2";
 import spaceGroteskBold from "../assets/fonts/SpaceGrotesk-Bold.woff2";
+import jetbrainsMonoItalic from "../assets/fonts/JetBrainsMono-Italic.woff2";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -35,6 +36,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
     <link rel="preload" href={satoshiMedium} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={satoshiBlackItalic} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={spaceGroteskBold} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={jetbrainsMonoItalic} as="font" type="font/woff2" crossorigin />
 
     <link rel="canonical" href={canonical} />
 
