@@ -33,7 +33,8 @@
     "cover": "Captura de portada"
   },
   "projects": {
-    "live": "Ver proyecto →",
+    "goToProject": "Ver proyecto",
+    "live": "Ver proyecto",
     "repo": "Código",
     "back": "Volver a proyectos",
     "items": {
