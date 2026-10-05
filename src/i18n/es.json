@@ -35,6 +35,7 @@
     "social": "Redes y contacto"
   },
   "projects": {
+    "featured": "Lo último que he construido: Graphly, mi panel de métricas personales.",
     "goToProject": "Ver proyecto",
     "live": "Ver proyecto",
     "repo": "Código",
