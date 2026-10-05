@@ -25,24 +25,24 @@ if (shots.length !== shotText.length) {
 }
 
 const meta = "font-mono text-xs italic tracking-widest text-muted-foreground";
-const linkStyle = "transition-colors duration-300 hover:text-primary";
+const linkStyle = "-my-1 py-1 transition-colors duration-300 hover:text-primary";
 ---
 
 <Layout title={`${title} · ${t.hero.name}`} description={summary}>
   <main>
-    <section class="mx-auto flex w-full max-w-7xl flex-col px-10 pt-10 pb-16">
+    <section class="mx-auto flex w-full max-w-7xl flex-col px-4 pt-10 pb-16 sm:px-10">
       <a
-        class:list={["w-fit leading-tight font-mono text-sm italic text-muted-foreground", linkStyle]}
+        class:list={["w-fit leading-4 font-mono text-xs italic text-muted-foreground sm:text-sm", linkStyle]}
         href="/#proyectos"
       >
         // {back}
       </a>
 
-      <h1 class="mt-12 text-balance font-display text-title">{title}</h1>
+      <h1 class="mt-8 text-balance font-display text-title sm:mt-12">{title}</h1>
 
       {
         description.length > 0 && (
-          <div class="mt-12 flex max-w-prose flex-col gap-y-6 text-muted-foreground">
+          <div class="mt-8 flex max-w-prose flex-col gap-y-6 text-muted-foreground sm:mt-12">
             {description.map((paragraph) => (
               <p>{paragraph}</p>
             ))}
@@ -50,7 +50,7 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
         )
       }
 
-      <TagList tags={tags} class={`mt-20 ${meta}`} />
+      <TagList tags={tags} class={`mt-14 sm:mt-20 ${meta}`} />
 
       {
         (liveUrl || repoUrl) && (
@@ -71,8 +71,8 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
     </section>
 
     <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.cover}>
-      <div class="mx-auto flex w-full max-w-7xl px-10">
-        <span class="font-mono text-sm italic text-muted-foreground">// {imageAlt}</span>
+      <div class="mx-auto flex w-full max-w-7xl px-4 sm:px-10">
+        <span class="font-mono text-xs italic text-muted-foreground sm:text-sm">// {imageAlt}</span>
       </div>
 
       <ProjectShot
@@ -88,12 +88,12 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
 
     {
       shots.length > 0 && (
-        <section class="mx-auto w-full max-w-7xl px-10 pt-20 pb-28" aria-label={shotsTitle}>
+        <section class="mx-auto w-full max-w-7xl px-4 pt-14 pb-20 sm:px-10 sm:pt-20 sm:pb-28" aria-label={shotsTitle}>
           <SectionTitle count={shots.length}>{shotsTitle}</SectionTitle>
 
           <ol class="mt-6 divide-y divide-muted">
             {shots.map((shot, position) => (
-              <li class="grid gap-y-6 py-14 md:grid-cols-12 md:gap-x-10">
+              <li class="grid gap-y-6 py-10 sm:py-14 md:grid-cols-12 md:gap-x-10">
                 <p class="flex gap-x-5 md:col-span-4 items-baseline">
                   <span class:list={["shrink-0 tabular-nums", meta]}>{String(position + 1).padStart(2, "0")}</span>
                   <span class="text-balance">{shotText[position]}</span>
@@ -111,7 +111,7 @@ const linkStyle = "transition-colors duration-300 hover:text-primary";
                     alt={shotText[position]}
                     aspect={null}
                     widths={[640, 1280, 1920, 2560]}
-                    sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 5rem)"
+                    sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 2rem)"
                   />
                 </button>
               </li>

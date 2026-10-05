@@ -41,7 +41,7 @@ const { bio, educationTitle, education, stackTitle, stack, languages, photoAlt }
       alt={photoAlt}
       class="border border-muted h-auto w-full object-cover"
       widths={[480, 960]}
-      sizes="(min-width: 768px) 477px, calc(100vw - 5rem)"
+      sizes="(min-width: 768px) 477px, calc(100vw - 2rem)"
       loading="lazy"
     />
 
@@ -53,7 +53,7 @@ const { bio, educationTitle, education, stackTitle, stack, languages, photoAlt }
           STACK.map(({ id, tags }) => (
             <li class="flex flex-col gap-y-1">
               <p class="font-mono text-xs italic tracking-widest text-muted-foreground">{stack[id]}</p>
-              <TagList tags={tags} class="text-sm text-foreground" />
+              <TagList tags={tags} class="text-xs text-foreground sm:text-sm" />
             </li>
           ))
         }

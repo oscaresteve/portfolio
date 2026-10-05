@@ -28,7 +28,7 @@ const { items, live, repo } = t.projects;
               </a>
             </h3>
 
-            <TagList tags={tags} class="pl-(--indent) text-sm sm:pl-0 sm:text-right" />
+            <TagList tags={tags} class="pl-(--indent) text-xs sm:pl-0 sm:text-right sm:text-sm" />
           </div>
 
           <div class="reveal">
@@ -43,7 +43,7 @@ const { items, live, repo } = t.projects;
                     <p class="flex flex-wrap gap-x-6 gap-y-2">
                       {liveUrl && (
                         <a
-                          class="transition-colors duration-300 hover:text-primary"
+                          class="-my-1 py-1 transition-colors duration-300 hover:text-primary"
                           href={liveUrl}
                           target="_blank"
                           rel="noopener"
@@ -53,7 +53,7 @@ const { items, live, repo } = t.projects;
                       )}
                       {repoUrl && (
                         <a
-                          class="transition-colors duration-300 hover:text-primary"
+                          class="-my-1 py-1 transition-colors duration-300 hover:text-primary"
                           href={repoUrl}
                           target="_blank"
                           rel="noopener"

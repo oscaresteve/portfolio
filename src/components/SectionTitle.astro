@@ -7,6 +7,6 @@ interface Props {
 const { as: Heading = "h2", count } = Astro.props;
 ---
 
-<Heading class="font-mono text-sm italic text-muted-foreground">
+<Heading class="font-mono text-xs italic text-muted-foreground sm:text-sm">
   // <slot />{count !== undefined && <span class="tabular-nums"> ({String(count).padStart(2, "0")})</span>}
 </Heading>

@@ -11,7 +11,8 @@
 
   --color-primary: #993300; /*Rusted Brown*/
 
-  --text-hero: clamp(2rem, calc((100vw - 5rem) * 0.1515), 11.4rem);
+  /* 15.15cqw: el ancho real del contenedor del hero, sin descontar gutters a mano */
+  --text-hero: clamp(2rem, 15.15cqw, 11.4rem);
   --text-hero--line-height: 0.92;
 
   --text-title: clamp(2.5rem, calc((100vw - 5rem) * 0.06), 5.5rem);
