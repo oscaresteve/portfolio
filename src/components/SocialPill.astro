@@ -6,7 +6,7 @@ const isExternal = typeof href === "string" && href.startsWith("http");
 
 <a
   class:list={[
-    "-my-1 inline-flex items-center gap-x-2 py-1 text-xs text-muted-foreground transition-colors duration-300 hover:text-primary sm:text-sm",
+    "-my-1 inline-flex items-center gap-x-2 py-1 text-xs text-muted-foreground transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 sm:text-sm",
     className,
   ]}
   href={href}

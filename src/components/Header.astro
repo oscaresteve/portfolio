@@ -2,7 +2,7 @@
 import { t } from "../i18n";
 
 const { brand, nav, cv, cvLabel } = t.header;
-const link = "-my-1 py-1 transition-colors duration-300 hover:text-primary";
+const link = "-my-1 py-1 transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4";
 ---
 
 <header class="mx-auto flex h-18 w-full max-w-7xl px-4 sm:px-10">
@@ -15,7 +15,7 @@ const link = "-my-1 py-1 transition-colors duration-300 hover:text-primary";
     <a class={link} href="/#experiencia">{nav.experience}</a>
     <a class={link} href="/#sobre-mi">{nav.about}</a>
     <a
-      class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground"
+      class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
       href="/cv-oscar-esteve.pdf"
       aria-label={cvLabel}
       download

@@ -15,7 +15,12 @@ const { tags, class: className } = Astro.props;
       <Fragment>
         {position > 0 && " · "}
         {tag.url ? (
-          <a class="transition-colors duration-300 hover:text-primary" href={tag.url} target="_blank" rel="noopener">
+          <a
+            class="transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+            href={tag.url}
+            target="_blank"
+            rel="noopener"
+          >
             {tag.name}
           </a>
         ) : (

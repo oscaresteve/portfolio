@@ -21,7 +21,7 @@ const { items, goToProject } = t.projects;
               </span>
 
               <a
-                class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary"
+                class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
                 href={`/proyectos/${slug}`}
               >
                 {title}
@@ -38,7 +38,7 @@ const { items, goToProject } = t.projects;
               <p class="max-w-prose">{summary}</p>
 
               <a
-                class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground"
+                class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
                 href={`/proyectos/${slug}`}
               >
                 {goToProject}
