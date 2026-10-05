@@ -1,23 +1,31 @@
 import { OGImageRoute } from "astro-og-canvas";
 
 import { PROJECTS } from "../../data/projects";
-import { t } from "../../i18n";
+import { LOCALES, ogImageKey, useTranslations } from "../../i18n";
 
 type OGPage = { title: string; description: string };
 
-/** Una imagen por pagina: `/og/index.png` y `/og/proyectos/<slug>.png`. */
-const pages: Record<string, OGPage> = {
-  index: { title: t.hero.name, description: t.hero.subtitle },
-  ...Object.fromEntries(
-    PROJECTS.map(({ slug }) => [
-      `proyectos/${slug}`,
-      { title: t.projects.items[slug].title, description: t.projects.items[slug].summary },
-    ]),
-  ),
-};
+/** Una imagen por pagina y por idioma: `/og/index.png`, `/og/proyectos/<slug>.png`
+ *  y sus equivalentes bajo `/og/en/`. */
+const pages: Record<string, OGPage> = Object.fromEntries(
+  LOCALES.flatMap((locale) => {
+    const t = useTranslations(locale);
+
+    return [
+      [ogImageKey(locale), { title: t.hero.name, description: t.hero.subtitle }],
+      ...PROJECTS.map(({ slug }) => [
+        ogImageKey(locale, slug),
+        { title: t.projects.items[slug].title, description: t.projects.items[slug].summary },
+      ]),
+    ];
+  }),
+);
 
 export const { getStaticPaths, GET } = await OGImageRoute({
   pages,
+  // Las claves de `pages` ya son rutas: sin esto la libreria las trata como
+  // ficheros de `src/pages` y recorta la extension y el `/index` final.
+  getSlug: (route) => `${route}.png`,
   getImageOptions: (_path, page: OGPage) => ({
     title: page.title,
     description: page.description,

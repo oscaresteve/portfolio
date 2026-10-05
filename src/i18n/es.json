@@ -1,6 +1,8 @@
 {
   "meta": {
-    "lang": "es",
+    "code": "ES",
+    "switchTo": "Ver la web en español",
+    "ogLocale": "es_ES",
     "title": "Óscar Esteve · Desarrollador Full-Stack",
     "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con React, Next.js, Angular y Symfony, y proyectos propios."
   },
@@ -12,6 +14,7 @@
       "about": "Sobre mí"
     },
     "navLabel": "Navegación principal",
+    "cvFile": "/cv-oscar-esteve-es.pdf",
     "cv": "Descargar CV",
     "cvLabel": "Descargar currículum en PDF"
   },

@@ -1,6 +1,6 @@
-import type { ImageMetadata } from "astro";
+import type { GetStaticPaths, ImageMetadata } from "astro";
 
-import { t } from "../i18n";
+import type { UI } from "../i18n";
 import { TAGS, type Tag } from "./tags";
 
 import graphlyDashboard from "../assets/projects/graphly/graphly-dashboard.png";
@@ -28,7 +28,7 @@ import solarMapa from "../assets/projects/solar/solar-mapa.png";
 import solarFavoritos from "../assets/projects/solar/solar-favoritos.png";
 import solarCuenta from "../assets/projects/solar/solar-cuenta.png";
 
-export type ProjectSlug = keyof typeof t.projects.items;
+export type ProjectSlug = keyof UI["projects"]["items"];
 
 export type Project = {
   slug: ProjectSlug;
@@ -85,3 +85,7 @@ export const PROJECTS: Project[] = [
     ],
   },
 ];
+
+/** Las paginas de proyecto de cada idioma recorren los mismos proyectos. */
+export const projectPaths = (() =>
+  PROJECTS.map((project) => ({ params: { slug: project.slug }, props: { project } }))) satisfies GetStaticPaths;

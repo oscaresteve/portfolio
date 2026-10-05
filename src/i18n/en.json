@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "code": "EN",
+    "switchTo": "View this site in English",
+    "ogLocale": "en_US",
+    "title": "Óscar Esteve · Full-Stack Developer",
+    "description": "Portfolio of Óscar Esteve, a full-stack developer based in Alzira, Valencia, specialising in frontend. Web applications built with React, Next.js, Angular and Symfony, plus personal projects."
+  },
+  "header": {
+    "brand": "/oscaresteve",
+    "nav": {
+      "projects": "Projects",
+      "experience": "Experience",
+      "about": "About"
+    },
+    "navLabel": "Main navigation",
+    "cvFile": "/cv-oscar-esteve-en.pdf",
+    "cv": "Download CV",
+    "cvLabel": "Download résumé as PDF"
+  },
+  "hero": {
+    "name": "Óscar Esteve",
+    "role": "Full-Stack",
+    "subtitle": "I build web applications end to end, with care for every detail. From Alzira, Valencia.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "oscarestevea24@gmail.com"
+    },
+    "availability": "Open to new opportunities"
+  },
+  "sections": {
+    "showcase": "Featured screenshot",
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
+    "cover": "Cover screenshot",
+    "social": "Links and contact"
+  },
+  "projects": {
+    "featured": "The latest thing I've built: Graphly, my personal metrics dashboard.",
+    "goToProject": "View project",
+    "live": "View project",
+    "repo": "Source",
+    "back": "Back to projects",
+    "next": "Next project",
+    "stack": "Stack",
+    "items": {
+      "graphly": {
+        "title": "Graphly",
+        "summary": "A tool to create personal metrics, log entries and explore them in interactive charts from a single dashboard.",
+        "imageAlt": "Graphly dashboard",
+        "description": [
+          "A personal data visualisation tool for creating metrics, logging entries and exploring the data through interactive charts.",
+          "Built with Next.js and Server Actions to keep frontend and backend in a single project. Clerk handles authentication, Drizzle ORM and Neon provide typed access to the database, and Shadcn/UI speeds up building the interface."
+        ],
+        "shots": [
+          "Sign-in screen.",
+          "Main dashboard with every metric and its latest logged entry.",
+          "Logging today's entry straight from the dashboard.",
+          "Metric detail, with its interactive chart and the date range filters.",
+          "Filtering by a custom date range.",
+          "Logging an entry with an earlier date.",
+          "Editing an entry that was already logged.",
+          "Metric creation form, with its description and unit of measurement.",
+          "Time zone, theme and language settings."
+        ]
+      },
+      "gruas-y-transportes-ryp": {
+        "title": "Grúas y transportes RYP",
+        "summary": "Corporate website for a self-loading crane and haulage company, built to bring in quote requests.",
+        "imageAlt": "Home page of the Grúas y transportes RYP website.",
+        "description": [
+          "Corporate website for a self-loading crane and haulage company in Valencia. It presents the services, explains the booking process in three steps and collects quote requests through a form.",
+          "Getting in touch is always one tap away: a landline in the header, a floating WhatsApp button on every page, and a form covering the type of service and a description of the job. It also includes a language switcher and an accessibility widget.",
+          "One of several client websites I built during my internship at Grup Apunts. Made with WordPress for a quick turnaround and a site the client can maintain on their own, then tuned for search so they get found by the services they offer."
+        ],
+        "shots": [
+          "The \"About us\" page, introducing the company.",
+          "The booking process, explained in three steps.",
+          "Contact page, with the quote form and the company details."
+        ]
+      },
+      "solar": {
+        "title": "Solar",
+        "summary": "An application to manage power generation plants and keep track of their production and consumption.",
+        "imageAlt": "Solar home screen.",
+        "description": [
+          "Web application for managing power generation plants. Each plant stores its installed capacity, coordinates, an image and its status, and builds up production and consumption records that the application sums up in charts and in a balance per period.",
+          "Built with Angular because it had to run entirely on the client, Tailwind CSS to keep the interface modular and maintainable, and Supabase as a Backend as a Service (BaaS), which removed the need to build and maintain a backend of my own.",
+          "It was my final project for the Web Application Development programme, and the first one I designed end to end by myself: data model, interface and deployment."
+        ],
+        "shots": [
+          "Plants listed in a table, with their capacity, location and status, plus the filtering and sorting controls.",
+          "A plant's detail page, with its information and the production and consumption history.",
+          "Logging form, with production, consumption and an optional note.",
+          "Records table, with the balance of each one and the chart for the period.",
+          "Editing a plant: details, image, coordinates and status.",
+          "Map with every plant placed on its coordinates.",
+          "Plants marked as favourites.",
+          "Account screen, with the profile details and photo."
+        ]
+      }
+    },
+    "shots": "Screenshots",
+    "zoom": "Enlarge"
+  },
+  "experience": [
+    {
+      "date": "March 2026 — June 2026",
+      "job": "Web Developer",
+      "title": "Grup Apunts",
+      "description": "I implemented new features in web applications with Symfony and brought some of them to mobile with Flutter. Working between the custom development team and the digital marketing one, I also built corporate websites and online stores with WordPress, tailored to what each client needed, and took care of maintenance and SEO for the sites of companies and local businesses."
+    },
+    {
+      "date": "March 2024 — June 2024",
+      "job": "Web Developer",
+      "title": "AELE, Armarios Levante",
+      "description": "I built the company's web quoting tool with React: I integrated the catalogue with all of its combinations and added the wardrobe calculation and customisation tools to speed up quoting and improve the customer experience. I also took it all the way to production."
+    }
+  ],
+  "about": {
+    "bio": [
+      "I'm Óscar Esteve, a full-stack developer based in Alzira, Valencia. I got into development wanting to understand how the things I used every day actually worked, and that curiosity led me through the SMR, DAM and DAW programmes.",
+      "I work on web applications end to end: I've implemented features with Symfony, built a quoting tool with React and integrated the company catalogue into it, and created corporate websites and online stores with WordPress. Frontend is where I'm most at home, putting together clean interfaces that are easy to use.",
+      "I keep my own projects going with Next, Astro and Express because I like to carry on learning on my own: when a technology catches my attention, I build something with it until I properly understand how it works."
+    ],
+    "educationTitle": "Education",
+    "education": [
+      {
+        "title": "Higher Technician in Web Application Development (DAW)",
+        "place": "IES Lluís Simarro",
+        "date": "2025 — 2026"
+      },
+      {
+        "title": "Higher Technician in Multiplatform Application Development (DAM)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2022 — 2024"
+      },
+      {
+        "title": "Technician in Microcomputer Systems and Networks (SMR)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2020 — 2022"
+      }
+    ],
+    "stackTitle": "Technologies",
+    "stack": {
+      "frontend": "Frontend",
+      "backend": "Backend and data",
+      "tools": "Tools"
+    },
+    "languages": "English (certified B1) · Native Spanish and Valencian.",
+    "photoAlt": "Óscar Esteve, facing the camera against a light background."
+  }
+}

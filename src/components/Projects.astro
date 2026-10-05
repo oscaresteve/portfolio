@@ -2,9 +2,11 @@
 import ProjectShot from "./ProjectShot.astro";
 import TagList from "./TagList.astro";
 import { PROJECTS } from "../data/projects";
-import { t } from "../i18n";
+import { getLocale, projectUrl, useTranslations } from "../i18n";
 
-const { items, goToProject } = t.projects;
+const locale = getLocale(Astro.currentLocale);
+
+const { items, goToProject } = useTranslations(locale).projects;
 ---
 
 <ol class="divide-y divide-muted [--indent:2rem] sm:[--indent:3rem]">
@@ -22,7 +24,7 @@ const { items, goToProject } = t.projects;
 
               <a
                 class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
-                href={`/proyectos/${slug}`}
+                href={projectUrl(locale, slug)}
               >
                 {title}
               </a>
@@ -39,7 +41,7 @@ const { items, goToProject } = t.projects;
 
               <a
                 class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
-                href={`/proyectos/${slug}`}
+                href={projectUrl(locale, slug)}
               >
                 {goToProject}
               </a>

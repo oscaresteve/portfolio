@@ -3,9 +3,9 @@ import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import MailSearch from "../icons/MailSearch.astro";
 import SocialPill from "./SocialPill.astro";
-import { t } from "../i18n";
+import { useTranslations } from "../i18n";
 
-const { name, role, subtitle, social, availability } = t.hero;
+const { name, role, subtitle, social, availability } = useTranslations(Astro.currentLocale).hero;
 ---
 
 <section

@@ -3,10 +3,12 @@ import { Image } from "astro:assets";
 import SectionTitle from "./SectionTitle.astro";
 import TagList from "./TagList.astro";
 import { STACK } from "../data/stack";
-import { t } from "../i18n";
+import { useTranslations } from "../i18n";
 import oscaresteve from "../assets/foto-perfil-camisa.webp";
 
-const { bio, educationTitle, education, stackTitle, stack, languages, photoAlt } = t.about;
+const { bio, educationTitle, education, stackTitle, stack, languages, photoAlt } = useTranslations(
+  Astro.currentLocale,
+).about;
 ---
 
 <article class="grid grid-cols-1 items-start gap-10 md:grid-cols-12">

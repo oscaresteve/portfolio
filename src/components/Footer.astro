@@ -3,7 +3,9 @@ import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import MailSearch from "../icons/MailSearch.astro";
 import SocialPill from "./SocialPill.astro";
-import { t } from "../i18n";
+import { useTranslations } from "../i18n";
+
+const t = useTranslations(Astro.currentLocale);
 
 const { social } = t.hero;
 const year = new Date().getFullYear();

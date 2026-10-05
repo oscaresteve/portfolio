@@ -1,13 +1,15 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-import { t } from "../i18n";
+import { useTranslations } from "../i18n";
+
+const { experience } = useTranslations(Astro.currentLocale);
 ---
 
 <ol class="divide-y divide-muted">
   {
-    t.experience.map((experience) => (
+    experience.map((job) => (
       <li class="pt-8 pb-6">
-        <ExperienceItem {...experience} />
+        <ExperienceItem {...job} />
       </li>
     ))
   }

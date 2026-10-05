@@ -1,7 +1,7 @@
 import { TAGS, type Tag } from "./tags";
-import { t } from "../i18n";
+import type { UI } from "../i18n";
 
-export type StackAreaId = keyof typeof t.about.stack;
+export type StackAreaId = keyof UI["about"]["stack"];
 
 export type StackArea = {
   id: StackAreaId;
