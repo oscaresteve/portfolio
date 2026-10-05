@@ -1,0 +1,16 @@
+---
+interface Props {
+  as?: "h2" | "h3";
+  /** Para que la seccion lo referencie con aria-labelledby. */
+  id?: string;
+  count?: number;
+}
+
+const { as: Heading = "h2", id, count } = Astro.props;
+---
+
+<Heading id={id} class="font-mono text-xs italic text-muted-foreground sm:text-sm">
+  <span aria-hidden="true">// </span><slot />{
+    count !== undefined && <span class="tabular-nums"> ({String(count).padStart(2, "0")})</span>
+  }
+</Heading>

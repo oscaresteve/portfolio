@@ -1,2 +1,16 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import "./fonts.css";
+@import "./theme.css";
+
+@layer components {
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: clamp(1.5px, 0.0165em, 3px) var(--color-primary);
+  }
+
+  @supports not (-webkit-text-stroke: 1px currentColor) {
+    .text-outline {
+      color: var(--color-primary);
+    }
+  }
+}

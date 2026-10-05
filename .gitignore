@@ -5,7 +5,10 @@ dist/
 .astro/
 
 # dependencies
+# En este repo se trabaja con pnpm: el lockfile es pnpm-lock.yaml
 node_modules/
+package-lock.json
+yarn.lock
 
 # logs
 npm-debug.log*

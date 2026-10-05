@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Experience from "../Experience.astro";
+import ContainerSection from "../ContainerSection.astro";
+import Projects from "../Projects.astro";
+import About from "../About.astro";
+import Hero from "../Hero.astro";
+import ProjectShot from "../ProjectShot.astro";
+import SectionTitle from "../SectionTitle.astro";
+import { PROJECTS } from "../../data/projects";
+import { SECTIONS, getLocale, projectUrl, useTranslations } from "../../i18n";
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+const sections = SECTIONS[locale];
+const featured = PROJECTS[0];
+---
+
+<Layout title={t.meta.title} description={t.meta.description}>
+  <main>
+    <Hero />
+
+    <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.showcase}>
+      <div class="mx-auto flex w-full max-w-7xl px-4 sm:px-10">
+        <a
+          class="-my-1 w-fit py-1 font-mono text-xs italic text-muted-foreground transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 sm:text-sm"
+          href={projectUrl(locale, featured.slug)}
+        >
+          <span aria-hidden="true">// </span>{t.projects.featured}<span aria-hidden="true"> →</span>
+        </a>
+      </div>
+      <ProjectShot
+        src={featured.image}
+        alt={t.projects.items[featured.slug].imageAlt}
+        aspect={null}
+        widths={[640, 1280, 1920, 2560, 2880, 3840]}
+        sizes="100vw"
+        loading="eager"
+        class="border-y border-muted"
+      />
+    </section>
+
+    <ContainerSection id={sections.projects} aria-labelledby={`${sections.projects}-title`}>
+      <SectionTitle id={`${sections.projects}-title`} count={PROJECTS.length}>{t.sections.projects}</SectionTitle>
+      <Projects />
+    </ContainerSection>
+
+    <ContainerSection id={sections.experience} aria-labelledby={`${sections.experience}-title`}>
+      <SectionTitle id={`${sections.experience}-title`} count={t.experience.length}>
+        {t.sections.experience}
+      </SectionTitle>
+      <Experience />
+    </ContainerSection>
+
+    <ContainerSection id={sections.about} aria-labelledby={`${sections.about}-title`}>
+      <SectionTitle id={`${sections.about}-title`}>{t.sections.about}</SectionTitle>
+      <About />
+    </ContainerSection>
+  </main>
+</Layout>

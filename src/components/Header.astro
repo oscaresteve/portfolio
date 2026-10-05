@@ -1,10 +1,62 @@
-<header class="flex w-full fixed top-0 z-50 px-4">
+---
+import { LOCALES, SECTIONS, getLocale, homeUrl, useTranslations, type Locale } from "../i18n";
+
+interface Props {
+  /** Esta misma pagina en cada idioma, calculada en el Layout. */
+  paths: Record<Locale, string>;
+}
+
+const { paths } = Astro.props;
+
+const locale = getLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+const { brand, nav, navLabel, cv, cvFile, cvLabel } = t.header;
+const sections = SECTIONS[locale];
+
+// El selector solo tiene sentido con los idiomas que no se estan leyendo, y la
+// etiqueta de cada uno va en ese idioma: la lee quien lo busca.
+const others = LOCALES.filter((other) => other !== locale).map((other) => {
+  const { code, switchTo } = useTranslations(other).meta;
+
+  return { locale: other, href: paths[other], code, switchTo };
+});
+
+const link = "-my-1 py-1 transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4";
+---
+
+<header class="mx-auto flex h-18 w-full max-w-7xl px-4 sm:px-10">
   <nav
-    class="flex mt-6 flex-row rounded-full w-sm mx-auto py-2 px-6 border justify-between border-white/10 backdrop-blur-sm"
+    class="flex w-full flex-wrap items-center justify-end gap-x-4 text-nowrap text-xs sm:gap-x-10 sm:text-sm"
+    aria-label={navLabel}
   >
-    <a class="text-white/80 transition hover:text-blue-300" href="#top">Inicio</a>
-    <a class="text-white/80 transition hover:text-blue-300" href="#proyectos">Proyectos</a>
-    <a class="text-white/80 transition hover:text-blue-300" href="#experiencia">Experiencia</a>
-    <a class="text-white/80 transition hover:text-blue-300" href="#sobre-mi">Sobre mí</a>
+    <a
+      class:list={["hidden sm:block mr-auto w-full font-display tracking-tight text-muted-foreground sm:w-auto", link]}
+      href={homeUrl(locale)}>{brand}</a
+    >
+    <a class={link} href={homeUrl(locale, sections.projects)}>{nav.projects}</a>
+    <a class={link} href={homeUrl(locale, sections.experience)}>{nav.experience}</a>
+    <a class={link} href={homeUrl(locale, sections.about)}>{nav.about}</a>
+    {
+      others.map(({ locale: other, href, code, switchTo }) => (
+        <a
+          class:list={["font-mono italic tracking-widest text-muted-foreground", link]}
+          href={href}
+          hreflang={other}
+          lang={other}
+          aria-label={switchTo}
+        >
+          {code}
+        </a>
+      ))
+    }
+    <a
+      class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+      href={cvFile}
+      aria-label={cvLabel}
+      download
+    >
+      {cv}
+    </a>
   </nav>
 </header>

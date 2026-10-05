@@ -1,0 +1,8 @@
+---
+import Project from "../../../components/pages/Project.astro";
+import { projectPaths } from "../../../data/projects";
+
+export const getStaticPaths = projectPaths;
+---
+
+<Project {...Astro.props} />

@@ -1,0 +1,32 @@
+---
+import type { Tag } from "../data/tags";
+
+interface Props {
+  tags: Tag[];
+  class?: string;
+}
+
+const { tags, class: className } = Astro.props;
+---
+
+<p class={className}>
+  {
+    tags.map((tag, position) => (
+      <Fragment>
+        {position > 0 && " · "}
+        {tag.url ? (
+          <a
+            class="transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+            href={tag.url}
+            target="_blank"
+            rel="noopener"
+          >
+            {tag.name}
+          </a>
+        ) : (
+          tag.name
+        )}
+      </Fragment>
+    ))
+  }
+</p>

@@ -1,177 +1,54 @@
 ---
-import Angular from "../icons/Angular.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import Html from "../icons/Html.astro";
-import Css from "../icons/Css.astro";
-import Supabase from "../icons/Supabase.astro";
-import GitHub from "../icons/GitHub.astro";
-import ExternalLink from "../icons/ExternalLink.astro";
-import { Image } from "astro:assets";
-import solar from "../assets/solar.png";
-import adventure from "../assets/2048adventure.png";
-import Vite from "../icons/Vite.astro";
-import JavaScript from "../icons/JavaScript.astro";
-import graphly from "../assets/graphly.png";
-import Next from "../icons/Next.astro";
-import NeonDb from "../icons/NeonDb.astro";
-import DrizzleOrm from "../icons/DrizzleOrm.astro";
-import Clerk from "../icons/Clerk.astro";
-import Shadcn from "../icons/Shadcn.astro";
-import gruasytransportesryp from "../assets/gruasytransportesryp.png";
-import WordPress from "../icons/Wordpress.astro";
+import ProjectShot from "./ProjectShot.astro";
+import TagList from "./TagList.astro";
+import { PROJECTS } from "../data/projects";
+import { getLocale, projectUrl, useTranslations } from "../i18n";
 
-const TAGS = {
-  ANGULAR: {
-    name: "Angular",
-    icon: Angular,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    icon: Tailwind,
-  },
-  HTML: {
-    name: "HTML",
-    icon: Html,
-  },
-  CSS: {
-    name: "CSS",
-    icon: Css,
-  },
-  SUPABASE: {
-    name: "Supabase",
-    icon: Supabase,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    icon: JavaScript,
-  },
-  VITE: {
-    name: "Vite",
-    icon: Vite,
-  },
-  NEXT: {
-    name: "Next",
-    icon: Next,
-  },
-  NEONDB: {
-    name: "Neon Db",
-    icon: NeonDb,
-  },
-  DRIZZLEORM: {
-    name: "Drizzle ORM",
-    icon: DrizzleOrm,
-  },
-  CLERK: {
-    name: "Clerk",
-    icon: Clerk,
-  },
-  SHADCN: {
-    name: "Shadcn",
-    icon: Shadcn,
-  },
-  WORDPRESS: {
-    name: "WordPress",
-    icon: WordPress,
-  },
-};
+const locale = getLocale(Astro.currentLocale);
 
-const PROJECTS = [
-  {
-    title: "Graphly",
-    description: [
-      "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
-      "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. He utilizado Clerk para gestionar la autenticación de forma sencilla y Shadcn/UI para agilizar el desarrollo de la interfaz.",
-    ],
-    link: "https://graphly.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/graphly",
-    image: graphly,
-    tags: [TAGS.NEXT, TAGS.NEONDB, TAGS.DRIZZLEORM, TAGS.CLERK, TAGS.TAILWIND, TAGS.SHADCN],
-  },
-  {
-    title: "Grúas y transportes RYP",
-    description: [
-      "Una de las varias páginas web para clientes que desarrollé durante mis prácticas en Grup Apunts.",
-      "Se trata de una web corporativa construida con WordPress para ofrecer un desarrollo rápido y un sitio fácil de mantener por parte del cliente.",
-    ],
-    link: "https://gruasytransportesryp.es",
-    image: gruasytransportesryp,
-    tags: [TAGS.WORDPRESS],
-  },
-  {
-    title: "Solar",
-    description: [
-      "Aplicación web para la gestión de plantas solares, desarrollada como proyecto final del ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
-      "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio.",
-    ],
-    link: "https://solar.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/solar",
-    image: solar,
-    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
-  },
-  {
-    title: "2048 Adventure",
-    description: [
-      "Juego de puzles inspirado en 2048, desarrollado durante el ciclo de Desarrollo de Aplicaciones Web en Entorno Cliente.",
-      "Desarrollado con JavaScript Vanilla para profundizar en los fundamentos del lenguaje, Tailwind CSS para el diseño de la interfaz y Supabase para gestionar usuarios y almacenar las puntuaciones del ranking.",
-    ],
-    link: "https://2048-adventure.oscaresteve.dev",
-    github: "https://github.com/oscaresteve/2048-adventure",
-    image: adventure,
-    tags: [TAGS.JAVASCRIPT, TAGS.VITE, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.CSS, TAGS.HTML],
-  },
-];
+const { items, goToProject } = useTranslations(locale).projects;
 ---
 
-<div class="gap-10 flex flex-col">
+<ol class="divide-y divide-muted [--indent:2rem] sm:[--indent:3rem]">
   {
-    PROJECTS.map(({ title, description, link, github, image, tags }) => (
-      <article>
-        <div class="prose mb-6">
-          <h3 class="text-2xl text-blue-300">{title}</h3>
-          {description.map((desc) => (
-            <p class="text-white/80">{desc}</p>
-          ))}
-        </div>
-        <ul class="flex gap-2 flex-wrap">
-          {tags.map((tag) => (
-            <li>
-              <span class="flex items-center gap-x-2 rounded-full text-xs bg-white/5 border border-white/10 hover:border-white/15 py-1 px-2">
-                <tag.icon class="size-3" />
-                {tag.name}
+    PROJECTS.map(({ slug, image, tags }, position) => {
+      const { title, summary, imageAlt } = items[slug];
+
+      return (
+        <li class="group text-muted-foreground">
+          <div class="flex flex-col gap-y-3 pt-8 pb-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-10">
+            <h3 class="flex items-baseline font-display text-3xl leading-none sm:text-4xl lg:text-5xl">
+              <span class="w-(--indent) shrink-0 font-mono text-xs italic tracking-widest tabular-nums" aria-hidden="true">
+                {String(position + 1).padStart(2, "0")}
               </span>
-            </li>
-          ))}
-        </ul>
-        <a href={link} target="_blank" rel="noopener">
-          <Image
-            class="hover:scale-101 transition duration-300 my-4 cursor-pointer rounded-xl"
-            src={image}
-            alt={`Captura de pantalla del proyecto ${title}`}
-          />
-        </a>
-        <nav class="flex gap-2">
-          <a
-            href={link}
-            class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
-            target="_blank"
-            rel="noopener"
-          >
-            <ExternalLink class="size-4" />
-            Visitar
-          </a>
-          {github && (
-            <a
-              href={github}
-              class="rounded-lg border text-sm border-white/10 flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 cursor-pointer hover:border-white/20"
-              target="_blank"
-              rel="noopener"
-            >
-              <GitHub class="size-4" />
-              Código
-            </a>
-          )}
-        </nav>
-      </article>
-    ))
+
+              <a
+                class="text-balance text-foreground transition-colors duration-300 group-hover:text-primary group-focus-within:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+                href={projectUrl(locale, slug)}
+              >
+                {title}
+              </a>
+            </h3>
+
+            <TagList tags={tags} class="pl-(--indent) text-xs sm:pl-0 sm:text-right sm:text-sm" />
+          </div>
+
+          <div class="grid gap-6 pb-10 pl-(--indent) md:grid-cols-12 md:gap-x-6 lg:gap-x-10">
+            <ProjectShot src={image} alt={imageAlt} class="border border-muted md:col-span-7" />
+
+            <div class="flex flex-col gap-y-4 text-sm md:col-span-5 md:self-end">
+              <p class="max-w-prose">{summary}</p>
+
+              <a
+                class="-my-1 py-1 text-primary transition-colors duration-300 hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+                href={projectUrl(locale, slug)}
+              >
+                {goToProject}
+              </a>
+            </div>
+          </div>
+        </li>
+      );
+    })
   }
-</div>
+</ol>

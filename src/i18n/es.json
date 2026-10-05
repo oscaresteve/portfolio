@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "code": "ES",
+    "switchTo": "Ver la web en español",
+    "ogLocale": "es_ES",
+    "title": "Óscar Esteve · Desarrollador Full-Stack",
+    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con React, Next.js, Angular y Symfony, y proyectos propios."
+  },
+  "header": {
+    "brand": "/oscaresteve",
+    "nav": {
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "about": "Sobre mí"
+    },
+    "navLabel": "Navegación principal",
+    "cvFile": "/cv-oscar-esteve-es.pdf",
+    "cv": "Descargar CV",
+    "cvLabel": "Descargar currículum en PDF"
+  },
+  "hero": {
+    "name": "Óscar Esteve",
+    "role": "Full-Stack",
+    "subtitle": "Desarrollo aplicaciones web de principio a fin, cuidando todos los detalles. Desde Alzira, Valencia.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "oscarestevea24@gmail.com"
+    },
+    "availability": "Buscando nuevas oportunidades"
+  },
+  "sections": {
+    "showcase": "Captura destacada",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "about": "Sobre mí",
+    "cover": "Captura de portada",
+    "social": "Redes y contacto"
+  },
+  "projects": {
+    "featured": "Lo último que he construido: Graphly, mi panel de métricas personales.",
+    "goToProject": "Ver proyecto",
+    "live": "Ver proyecto",
+    "repo": "Código",
+    "back": "Volver a proyectos",
+    "next": "Siguiente proyecto",
+    "stack": "Stack",
+    "items": {
+      "graphly": {
+        "title": "Graphly",
+        "summary": "Herramienta para crear métricas personales, registrar entradas y consultarlas en gráficos interactivos desde un único panel.",
+        "imageAlt": "Dashboard de Graphly",
+        "description": [
+          "Herramienta personal de visualización de datos que permite crear métricas, registrar entradas y consultar la información mediante gráficos interactivos.",
+          "Desarrollada con Next.js y Server Actions para unificar el frontend y el backend en un mismo proyecto. Clerk se encarga de la autenticación, Drizzle ORM y Neon del acceso tipado a la base de datos, y Shadcn/UI de agilizar el desarrollo de la interfaz."
+        ],
+        "shots": [
+          "Pantalla de inicio de sesión.",
+          "Panel principal con todas las métricas y su última entrada registrada.",
+          "Registro de la entrada de hoy desde el propio panel.",
+          "Detalle de una métrica, con su gráfico interactivo y los filtros por rango de fechas.",
+          "Filtro por un rango de fechas personalizado.",
+          "Registro de una entrada con fecha anterior.",
+          "Edición de una entrada ya registrada.",
+          "Formulario de creación de una métrica, con su descripción y su unidad de medida.",
+          "Ajustes de zona horaria, tema e idioma."
+        ]
+      },
+      "gruas-y-transportes-ryp": {
+        "title": "Grúas y transportes RYP",
+        "summary": "Web corporativa de una empresa de grúas autocargantes y transporte, pensada para captar peticiones de presupuesto.",
+        "imageAlt": "Portada de la web de Grúas y transportes RYP.",
+        "description": [
+          "Web corporativa para una empresa de grúas autocargantes y transporte en Valencia. Presenta los servicios, explica el proceso de contratación en tres pasos y recoge peticiones de presupuesto desde un formulario.",
+          "El contacto está siempre a mano: teléfono fijo en la cabecera, botón flotante de WhatsApp en todas las páginas y formulario con el tipo de servicio y la descripción del trabajo. Incluye además selector de idioma y un widget de accesibilidad.",
+          "Una de las varias webs para clientes que desarrollé durante mis prácticas en Grup Apunts. Construida con WordPress para ofrecer un desarrollo rápido y un sitio que el cliente pueda mantener por su cuenta, y repasada después en su posicionamiento para que la encuentren por los servicios que ofrece."
+        ],
+        "shots": [
+          "Página «Sobre nosotros», con la presentación de la empresa.",
+          "El proceso de contratación, explicado en tres pasos.",
+          "Página de contacto, con el formulario de presupuesto y los datos de la empresa."
+        ]
+      },
+      "solar": {
+        "title": "Solar",
+        "summary": "Aplicación para gestionar plantas de generación eléctrica y llevar el registro de su producción y su consumo.",
+        "imageAlt": "Pantalla de inicio de Solar.",
+        "description": [
+          "Aplicación web para gestionar plantas de generación eléctrica. Cada planta guarda su capacidad instalada, sus coordenadas, una imagen y su estado, y acumula registros de producción y consumo que la aplicación resume en gráficos y en un balance por periodo.",
+          "Construida con Angular debido a la necesidad de ejecutarse íntegramente en el cliente, Tailwind CSS para crear una interfaz modular y mantenible, y Supabase como Backend as a Service (BaaS), evitando así la necesidad de desarrollar y mantener un backend propio.",
+          "Fue mi proyecto final del ciclo de Desarrollo de Aplicaciones Web, y el primero que planteé entero por mi cuenta: modelo de datos, interfaz y despliegue."
+        ],
+        "shots": [
+          "Listado de plantas en tabla, con su capacidad, ubicación y estado, y los controles de filtrado y ordenación.",
+          "Ficha de una planta, con su información y el histórico de producción y consumo.",
+          "Formulario de registro, con la producción, el consumo y un mensaje opcional.",
+          "Tabla de registros, con el balance de cada uno y el gráfico del periodo.",
+          "Edición de una planta: datos, imagen, coordenadas y estado.",
+          "Mapa con todas las plantas situadas sobre sus coordenadas.",
+          "Plantas marcadas como favoritas.",
+          "Pantalla de cuenta, con los datos del perfil y la foto."
+        ]
+      }
+    },
+    "shots": "Capturas",
+    "zoom": "Ampliar"
+  },
+  "experience": [
+    {
+      "date": "Marzo 2026 — Junio 2026",
+      "job": "Desarrollador Web",
+      "title": "Grup Apunts",
+      "description": "Implementé nuevas funcionalidades en aplicaciones web con Symfony y llevé algunas de ellas a su versión móvil con Flutter. Entre el equipo de desarrollo a medida y el de marketing digital, creé también webs corporativas y tiendas online con WordPress, adaptadas a lo que cada cliente necesitaba, y me ocupé del mantenimiento y del SEO de sitios de empresas y comercios locales."
+    },
+    {
+      "date": "Marzo 2024 — Junio 2024",
+      "job": "Desarrollador Web",
+      "title": "AELE, Armarios Levante",
+      "description": "Desarrollé con React el presupuestador web de la empresa: integré el catálogo con todas sus combinaciones y añadí las herramientas de cálculo y personalización de armarios para agilizar la elaboración de presupuestos y mejorar la experiencia del cliente. Me encargué también de dejarlo desplegado en producción."
+    }
+  ],
+  "about": {
+    "bio": [
+      "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Llegué al desarrollo por querer entender cómo funcionaba lo que usaba a diario, y esa curiosidad acabó en los ciclos de SMR, DAM y DAW.",
+      "Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Donde mejor me muevo es en el frontend, montando interfaces limpias y fáciles de usar.",
+      "Mantengo proyectos propios con Next, Astro y Express porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona."
+    ],
+    "educationTitle": "Formación",
+    "education": [
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
+        "place": "IES Lluís Simarro",
+        "date": "2025 — 2026"
+      },
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2022 — 2024"
+      },
+      {
+        "title": "Técnico en Sistemas Microinformáticos y Redes (SMR)",
+        "place": "Centre Educatiu Xúquer",
+        "date": "2020 — 2022"
+      }
+    ],
+    "stackTitle": "Tecnologías",
+    "stack": {
+      "frontend": "Frontend",
+      "backend": "Backend y datos",
+      "tools": "Herramientas"
+    },
+    "languages": "Inglés (B1 certificado) · Español y valenciano nativos.",
+    "photoAlt": "Óscar Esteve, de frente y sobre fondo claro."
+  }
+}

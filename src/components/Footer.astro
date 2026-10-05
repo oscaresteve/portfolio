@@ -1,26 +1,35 @@
 ---
 import GitHub from "../icons/GitHub.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
+import MailSearch from "../icons/MailSearch.astro";
+import SocialPill from "./SocialPill.astro";
+import { useTranslations } from "../i18n";
 
-const today = new Date();
+const t = useTranslations(Astro.currentLocale);
+
+const { social } = t.hero;
+const year = new Date().getFullYear();
 ---
 
-<footer class="w-full max-w-3xl mx-auto mt-10 flex items-center justify-between p-4">
-  <div class="flex flex-col gap-0.5">
-    <span class="text-sm text-white/80">Siempre aprendiendo ✨</span>
-  </div>
+<footer class="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 sm:px-10">
+  <div
+    class="flex flex-col gap-y-4 border-t border-muted pt-6 text-muted-foreground sm:flex-row sm:items-center sm:justify-between"
+  >
+    <span class="font-display text-xs tracking-tight text-muted-foreground sm:text-sm">{t.header.brand}</span>
 
-  <nav class="flex items-center gap-3">
-    <a
-      href="https://www.linkedin.com/in/%C3%B3scar-esteve-aleixandre-629a11300/"
-      target="_blank"
-      rel="noopener"
-      aria-label="LinkedIn"
-    >
-      <LinkedIn class="size-4 text-white/70 hover:text-white transition-colors" />
-    </a>
-    <a href="https://github.com/oscaresteve" target="_blank" rel="noopener" aria-label="GitHub">
-      <GitHub class="size-4 text-white/70 hover:text-white transition-colors" />
-    </a>
-  </nav>
+    <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8 sm:justify-end" aria-label={t.sections.social}>
+      <SocialPill href="https://linkedin.com/in/oscaresteve">
+        <LinkedIn class="size-3" />
+        {social.linkedin}
+      </SocialPill>
+      <SocialPill href="https://github.com/oscaresteve">
+        <GitHub class="size-3" />
+        {social.github}
+      </SocialPill>
+      <SocialPill href={`mailto:${social.email}`}>
+        <MailSearch class="size-3" />
+        {social.email}
+      </SocialPill>
+    </nav>
+  </div>
 </footer>
