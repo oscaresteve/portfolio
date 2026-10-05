@@ -11,6 +11,7 @@
       "experience": "Experiencia",
       "about": "Sobre mí"
     },
+    "navLabel": "Navegación principal",
     "cv": "Descargar CV",
     "cvLabel": "Descargar currículum en PDF"
   },
@@ -30,7 +31,8 @@
     "projects": "Proyectos",
     "experience": "Experiencia",
     "about": "Sobre mí",
-    "cover": "Captura de portada"
+    "cover": "Captura de portada",
+    "social": "Redes y contacto"
   },
   "projects": {
     "goToProject": "Ver proyecto",

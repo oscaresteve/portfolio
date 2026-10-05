@@ -35,7 +35,7 @@ const linkStyle = "-my-1 py-1 transition-colors duration-300 hover:text-primary 
         class:list={["w-fit leading-4 font-mono text-xs italic text-muted-foreground sm:text-sm", linkStyle]}
         href="/#proyectos"
       >
-        // {back}
+        <span aria-hidden="true">// </span>{back}
       </a>
 
       <h1 class="mt-8 text-balance font-display text-title sm:mt-12">{title}</h1>
@@ -72,7 +72,9 @@ const linkStyle = "-my-1 py-1 transition-colors duration-300 hover:text-primary 
 
     <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.cover}>
       <div class="mx-auto flex w-full max-w-7xl px-4 sm:px-10">
-        <span class="font-mono text-xs italic text-muted-foreground sm:text-sm">// {imageAlt}</span>
+        <span class="font-mono text-xs italic text-muted-foreground sm:text-sm">
+          <span aria-hidden="true">// </span>{imageAlt}
+        </span>
       </div>
 
       <ProjectShot
@@ -88,14 +90,16 @@ const linkStyle = "-my-1 py-1 transition-colors duration-300 hover:text-primary 
 
     {
       shots.length > 0 && (
-        <section class="mx-auto w-full max-w-7xl px-4 pt-14 pb-20 sm:px-10 sm:pt-20 sm:pb-28" aria-label={shotsTitle}>
-          <SectionTitle count={shots.length}>{shotsTitle}</SectionTitle>
+        <section class="mx-auto w-full max-w-7xl px-4 pt-14 pb-20 sm:px-10 sm:pt-20 sm:pb-28" aria-labelledby="capturas-titulo">
+          <SectionTitle id="capturas-titulo" count={shots.length}>{shotsTitle}</SectionTitle>
 
           <ol class="mt-6 divide-y divide-muted">
             {shots.map((shot, position) => (
               <li class="grid gap-y-6 py-10 sm:py-14 md:grid-cols-12 md:gap-x-10">
                 <p class="flex gap-x-5 md:col-span-4 items-baseline">
-                  <span class:list={["shrink-0 tabular-nums", meta]}>{String(position + 1).padStart(2, "0")}</span>
+                  <span class:list={["shrink-0 tabular-nums", meta]} aria-hidden="true">
+                    {String(position + 1).padStart(2, "0")}
+                  </span>
                   <span class="text-balance">{shotText[position]}</span>
                 </p>
 

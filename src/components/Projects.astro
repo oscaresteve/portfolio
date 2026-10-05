@@ -16,7 +16,7 @@ const { items, goToProject } = t.projects;
         <li class="group text-muted-foreground">
           <div class="flex flex-col gap-y-3 pt-8 pb-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-10">
             <h3 class="flex items-baseline font-display text-3xl leading-none sm:text-4xl lg:text-5xl">
-              <span class="w-(--indent) shrink-0 font-mono text-xs italic tracking-widest tabular-nums">
+              <span class="w-(--indent) shrink-0 font-mono text-xs italic tracking-widest tabular-nums" aria-hidden="true">
                 {String(position + 1).padStart(2, "0")}
               </span>
 

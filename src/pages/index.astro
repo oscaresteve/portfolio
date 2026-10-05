@@ -17,7 +17,9 @@ import { t } from "../i18n";
 
     <section class="flex w-full flex-col gap-2 py-10" aria-label={t.sections.showcase}>
       <div class="mx-auto flex w-full max-w-7xl px-4 sm:px-10">
-        <span class="font-mono text-xs italic text-muted-foreground sm:text-sm">// {t.projects.items.graphly.imageAlt}</span>
+        <span class="font-mono text-xs italic text-muted-foreground sm:text-sm">
+          <span aria-hidden="true">// </span>{t.projects.items.graphly.imageAlt}
+        </span>
       </div>
       <ProjectShot
         src={PROJECTS[0].image}
@@ -30,18 +32,18 @@ import { t } from "../i18n";
       />
     </section>
 
-    <ContainerSection id="proyectos" aria-label={t.sections.projects}>
-      <SectionTitle count={PROJECTS.length}>{t.sections.projects}</SectionTitle>
+    <ContainerSection id="proyectos" aria-labelledby="proyectos-titulo">
+      <SectionTitle id="proyectos-titulo" count={PROJECTS.length}>{t.sections.projects}</SectionTitle>
       <Projects />
     </ContainerSection>
 
-    <ContainerSection id="experiencia" aria-label={t.sections.experience}>
-      <SectionTitle count={t.experience.length}>{t.sections.experience}</SectionTitle>
+    <ContainerSection id="experiencia" aria-labelledby="experiencia-titulo">
+      <SectionTitle id="experiencia-titulo" count={t.experience.length}>{t.sections.experience}</SectionTitle>
       <Experience />
     </ContainerSection>
 
-    <ContainerSection id="sobre-mi" aria-label={t.sections.about}>
-      <SectionTitle>{t.sections.about}</SectionTitle>
+    <ContainerSection id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <SectionTitle id="sobre-mi-titulo">{t.sections.about}</SectionTitle>
       <About />
     </ContainerSection>
   </main>
