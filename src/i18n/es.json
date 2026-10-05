@@ -40,6 +40,8 @@
     "live": "Ver proyecto",
     "repo": "Código",
     "back": "Volver a proyectos",
+    "next": "Siguiente proyecto",
+    "stack": "Stack",
     "items": {
       "graphly": {
         "title": "Graphly",
