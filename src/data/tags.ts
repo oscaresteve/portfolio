@@ -103,6 +103,26 @@ export const TAGS = {
     name: "Express",
     url: "https://expressjs.com",
   },
+  PRISMA: {
+    name: "Prisma",
+    url: "https://www.prisma.io",
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    url: "https://www.postgresql.org",
+  },
+  SOCKET_IO: {
+    name: "Socket.IO",
+    url: "https://socket.io",
+  },
+  ZOD: {
+    name: "Zod",
+    url: "https://zod.dev",
+  },
+  REACT_QUERY: {
+    name: "React Query",
+    url: "https://tanstack.com/query",
+  },
   JAVA: {
     name: "Java",
     url: "https://dev.java",

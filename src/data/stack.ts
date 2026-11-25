@@ -12,11 +12,30 @@ export type StackArea = {
 export const STACK: StackArea[] = [
   {
     id: "frontend",
-    tags: [TAGS.JAVASCRIPT, TAGS.TYPESCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ANGULAR, TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.TYPESCRIPT,
+      TAGS.REACT,
+      TAGS.NEXT,
+      TAGS.ANGULAR,
+      TAGS.ASTRO,
+      TAGS.TAILWIND,
+      TAGS.REACT_QUERY,
+    ],
   },
   {
     id: "backend",
-    tags: [TAGS.SYMFONY, TAGS.EXPRESS, TAGS.JAVA, TAGS.SPRING_BOOT, TAGS.SUPABASE],
+    tags: [
+      TAGS.SYMFONY,
+      TAGS.EXPRESS,
+      TAGS.JAVA,
+      TAGS.SPRING_BOOT,
+      TAGS.PRISMA,
+      TAGS.POSTGRESQL,
+      TAGS.SUPABASE,
+      TAGS.SOCKET_IO,
+      TAGS.ZOD,
+    ],
   },
   {
     id: "tools",

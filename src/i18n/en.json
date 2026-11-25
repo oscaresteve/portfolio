@@ -4,7 +4,7 @@
     "switchTo": "View this site in English",
     "ogLocale": "en_US",
     "title": "Óscar Esteve · Full-Stack Developer",
-    "description": "Portfolio of Óscar Esteve, a full-stack developer based in Alzira, Valencia, specialising in frontend. Web applications built with React, Next.js, Angular and Symfony, plus personal projects."
+    "description": "Portfolio of Óscar Esteve, a full-stack developer based in Alzira, Valencia, specialising in frontend. Web applications built with Next.js, React, Angular and Symfony, REST APIs with Express and Prisma, plus personal projects such as TaskFlow."
   },
   "header": {
     "brand": "/oscaresteve",
@@ -38,14 +38,36 @@
     "social": "Links and contact"
   },
   "projects": {
-    "featured": "The latest thing I've built: Graphly, my personal metrics dashboard.",
+    "featured": "The latest thing I've built: TaskFlow, a team project manager with an API of its own.",
     "goToProject": "View project",
     "live": "View project",
+    "livePending": "Live demo in progress",
     "repo": "Source",
+    "repoWeb": "Client source",
+    "repoApi": "API source",
     "back": "Back to projects",
     "next": "Next project",
     "stack": "Stack",
     "items": {
+      "taskflow": {
+        "title": "TaskFlow",
+        "summary": "A team project and task manager with a REST API of its own: workspaces, roles, a drag-and-drop board and real time.",
+        "imageAlt": "Kanban board of a project in TaskFlow.",
+        "description": [
+          "A team project and task management application, in three levels — workspaces, projects and tasks — the first two with members and roles of their own. Every task has a status, a priority, a due date, an assignee, comments with mentions and a history, and moves between columns by being dragged across the board.",
+          "The API lives in its own repository: Express 5 and TypeScript in layers (route → controller → service → repository), Prisma on top of PostgreSQL, Zod validating everything that comes in, and sessions with access and refresh JWTs in httpOnly cookies. Its 378 tests are integration tests: they hit the real API against its own Postgres in Docker, not mocks.",
+          "The history, the notifications and the real-time channel are not solved separately: they all come out of a single domain event table, written in the same transaction as the change that caused it, so the log cannot claim something that later rolled back. Avatars never go through the API: the browser compresses the image, asks for a signed URL and uploads the file straight to the bucket — Cloudflare R2 in production, MinIO locally — and the backend only confirms afterwards that the object is there. And card ordering uses lexorank, the way Jira does it, because a numeric field runs out of room as you reorder.",
+          "The client is Next.js 16 with the App Router and React 19: React Query for server state and optimistic dragging, socket.io for real time, and filters, search and pagination in the URL through nuqs, so any view can be shared as a link. It is my largest project so far, and the first where I wrote the decisions down as I made them."
+        ],
+        "shots": [
+          "A workspace summary, with its counters and the activity log: what changed and who did it.",
+          "A project summary: its tasks by status, by priority and by due date.",
+          "Task list filtered by status, with each task's priority, assignee and due date.",
+          "Task detail: its fields, the comment thread with mentions, and the history.",
+          "A workspace's members and their roles, with pending invitations kept apart.",
+          "Global search from a keyboard shortcut, with workspaces, projects and tasks in one result."
+        ]
+      },
       "graphly": {
         "title": "Graphly",
         "summary": "A tool to create personal metrics, log entries and explore them in interactive charts from a single dashboard.",
@@ -123,7 +145,7 @@
     "bio": [
       "I'm Óscar Esteve, a full-stack developer based in Alzira, Valencia. I got into development wanting to understand how the things I used every day actually worked, and that curiosity led me through the SMR, DAM and DAW programmes.",
       "I work on web applications end to end: I've implemented features with Symfony, built a quoting tool with React and integrated the company catalogue into it, and created corporate websites and online stores with WordPress. Frontend is where I'm most at home, putting together clean interfaces that are easy to use.",
-      "I keep my own projects going with Next, Astro and Express because I like to carry on learning on my own: when a technology catches my attention, I build something with it until I properly understand how it works."
+      "I keep building my own projects because I like to carry on learning on my own: when a technology catches my attention, I build something with it until I properly understand how it works. The latest one is TaskFlow, where I took on both halves: a REST API in Express with roles, domain events and integration tests, and its Next.js client with a drag-and-drop board and real-time updates."
     ],
     "educationTitle": "Education",
     "education": [

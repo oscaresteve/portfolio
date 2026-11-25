@@ -3,6 +3,14 @@ import type { GetStaticPaths, ImageMetadata } from "astro";
 import type { UI } from "../i18n";
 import { TAGS, type Tag } from "./tags";
 
+import taskflowKanban from "../assets/projects/taskflow/taskflow-kanban.png";
+import taskflowEspacio from "../assets/projects/taskflow/taskflow-espacio.png";
+import taskflowProyecto from "../assets/projects/taskflow/taskflow-proyecto.png";
+import taskflowTareas from "../assets/projects/taskflow/taskflow-tareas.png";
+import taskflowTarea from "../assets/projects/taskflow/taskflow-tarea.png";
+import taskflowMiembros from "../assets/projects/taskflow/taskflow-miembros.png";
+import taskflowBuscador from "../assets/projects/taskflow/taskflow-buscador.png";
+
 import graphlyDashboard from "../assets/projects/graphly/graphly-dashboard.png";
 import graphlyLogin from "../assets/projects/graphly/graphly-login.png";
 import graphlyCreateMetric from "../assets/projects/graphly/graphly-create-metric.png";
@@ -33,7 +41,13 @@ export type ProjectSlug = keyof UI["projects"]["items"];
 export type Project = {
   slug: ProjectSlug;
   liveUrl?: string;
+  /** Marca el hueco del enlace a la demo mientras el despliegue esta en curso.
+   *  Con `liveUrl` puesto no pinta nada: el enlace ya manda. */
+  livePending?: boolean;
   repoUrl?: string;
+  /** Segundo repositorio, para los proyectos partidos en cliente y API. Su
+   *  presencia es lo que renombra `repoUrl` a "codigo del cliente". */
+  apiRepoUrl?: string;
   image: ImageMetadata;
   tags: Tag[];
   /** Capturas del proyecto. La descripcion de cada una sale de
@@ -42,6 +56,24 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    slug: "taskflow",
+    livePending: true,
+    repoUrl: "https://github.com/oscaresteve/taskflow-frontend",
+    apiRepoUrl: "https://github.com/oscaresteve/taskflow-backend",
+    image: taskflowKanban,
+    tags: [
+      TAGS.NEXT,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.EXPRESS,
+      TAGS.PRISMA,
+      TAGS.POSTGRESQL,
+      TAGS.SOCKET_IO,
+      TAGS.DOCKER,
+    ],
+    shots: [taskflowEspacio, taskflowProyecto, taskflowTareas, taskflowTarea, taskflowMiembros, taskflowBuscador],
+  },
   {
     slug: "graphly",
     liveUrl: "https://graphly.oscaresteve.dev",

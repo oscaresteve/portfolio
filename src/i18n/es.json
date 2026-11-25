@@ -4,7 +4,7 @@
     "switchTo": "Ver la web en español",
     "ogLocale": "es_ES",
     "title": "Óscar Esteve · Desarrollador Full-Stack",
-    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con React, Next.js, Angular y Symfony, y proyectos propios."
+    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con Next.js, React, Angular y Symfony, APIs REST con Express y Prisma, y proyectos propios como TaskFlow."
   },
   "header": {
     "brand": "/oscaresteve",
@@ -38,14 +38,36 @@
     "social": "Redes y contacto"
   },
   "projects": {
-    "featured": "Lo último que he construido: Graphly, mi panel de métricas personales.",
+    "featured": "Lo último que he construido: TaskFlow, un gestor de proyectos en equipo con su propia API.",
     "goToProject": "Ver proyecto",
     "live": "Ver proyecto",
+    "livePending": "Demo en preparación",
     "repo": "Código",
+    "repoWeb": "Código del cliente",
+    "repoApi": "Código de la API",
     "back": "Volver a proyectos",
     "next": "Siguiente proyecto",
     "stack": "Stack",
     "items": {
+      "taskflow": {
+        "title": "TaskFlow",
+        "summary": "Gestor de proyectos y tareas en equipo, con su propia API REST: espacios de trabajo, roles, tablero arrastrable y tiempo real.",
+        "imageAlt": "Tablero kanban de un proyecto en TaskFlow.",
+        "description": [
+          "Aplicación de gestión de proyectos y tareas en equipo, en tres niveles —espacios de trabajo, proyectos y tareas—, con miembros y roles propios en los dos primeros. Cada tarea tiene estado, prioridad, vencimiento, responsable, comentarios con menciones e historial, y se mueve entre columnas arrastrándola por el tablero.",
+          "La API vive en su propio repositorio: Express 5 y TypeScript en capas (ruta → controlador → servicio → repositorio), Prisma sobre PostgreSQL, Zod validando todo lo que entra y sesión con JWT de acceso y refresco en cookies httpOnly. Sus 378 tests son de integración: atacan la API real contra su propio Postgres en Docker, no mocks.",
+          "El historial, las notificaciones y el tiempo real no se resuelven por separado: salen de una única tabla de eventos de dominio, escrita en la misma transacción que el cambio que la origina, para que el registro no pueda afirmar algo que luego hizo rollback. Los avatares no pasan por la API: el navegador comprime la imagen, pide una URL firmada y sube el fichero directo al bucket —Cloudflare R2 en producción, MinIO en local—, y el backend solo confirma después que el objeto está ahí. Y el orden de las tarjetas usa lexorank, al estilo de Jira, porque un campo numérico se agota al reordenar.",
+          "El cliente es Next.js 16 con App Router y React 19: React Query para el estado de servidor y el arrastre optimista, socket.io para el tiempo real, y los filtros, la búsqueda y la paginación en la URL con nuqs, para que cualquier vista se comparta como enlace. Es mi proyecto más grande hasta ahora, y el primero en el que documenté las decisiones mientras las tomaba."
+        ],
+        "shots": [
+          "Resumen de un espacio, con sus contadores y el registro de actividad: qué cambió y quién.",
+          "Resumen de un proyecto: sus tareas por estado, por prioridad y por fecha de vencimiento.",
+          "Lista de tareas filtrando por estado, con la prioridad, el responsable y el vencimiento de cada una.",
+          "Detalle de una tarea: sus campos, el hilo de comentarios con menciones y el historial.",
+          "Miembros de un espacio y sus roles, con las invitaciones pendientes aparte.",
+          "Buscador global por atajo de teclado, con espacios, proyectos y tareas en el mismo resultado."
+        ]
+      },
       "graphly": {
         "title": "Graphly",
         "summary": "Herramienta para crear métricas personales, registrar entradas y consultarlas en gráficos interactivos desde un único panel.",
@@ -123,7 +145,7 @@
     "bio": [
       "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Llegué al desarrollo por querer entender cómo funcionaba lo que usaba a diario, y esa curiosidad acabó en los ciclos de SMR, DAM y DAW.",
       "Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Donde mejor me muevo es en el frontend, montando interfaces limpias y fáciles de usar.",
-      "Mantengo proyectos propios con Next, Astro y Express porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona."
+      "Mantengo proyectos propios porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona. El último es TaskFlow, donde me he hecho cargo de las dos mitades: una API REST en Express con roles, eventos de dominio y tests de integración, y su cliente en Next.js con tablero arrastrable y tiempo real."
     ],
     "educationTitle": "Formación",
     "education": [
