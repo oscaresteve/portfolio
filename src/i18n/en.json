@@ -4,7 +4,7 @@
     "switchTo": "View this site in English",
     "ogLocale": "en_US",
     "title": "Óscar Esteve · Full-Stack Developer",
-    "description": "Portfolio of Óscar Esteve, a full-stack developer based in Alzira, Valencia, specialising in frontend. Web applications built with React, Next.js, Angular and Symfony, plus personal projects."
+    "description": "Portfolio of Óscar Esteve, a full-stack developer based in Alzira, Valencia, specialising in frontend. Web applications built with Next.js, React, Angular and Symfony, REST APIs with Express and Prisma, plus personal projects such as TaskFlow."
   },
   "header": {
     "brand": "/oscaresteve",
@@ -145,7 +145,7 @@
     "bio": [
       "I'm Óscar Esteve, a full-stack developer based in Alzira, Valencia. I got into development wanting to understand how the things I used every day actually worked, and that curiosity led me through the SMR, DAM and DAW programmes.",
       "I work on web applications end to end: I've implemented features with Symfony, built a quoting tool with React and integrated the company catalogue into it, and created corporate websites and online stores with WordPress. Frontend is where I'm most at home, putting together clean interfaces that are easy to use.",
-      "I keep my own projects going with Next, Astro and Express because I like to carry on learning on my own: when a technology catches my attention, I build something with it until I properly understand how it works."
+      "I keep building my own projects because I like to carry on learning on my own: when a technology catches my attention, I build something with it until I properly understand how it works. The latest one is TaskFlow, where I took on both halves: a REST API in Express with roles, domain events and integration tests, and its Next.js client with a drag-and-drop board and real-time updates."
     ],
     "educationTitle": "Education",
     "education": [

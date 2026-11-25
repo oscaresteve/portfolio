@@ -4,7 +4,7 @@
     "switchTo": "Ver la web en español",
     "ogLocale": "es_ES",
     "title": "Óscar Esteve · Desarrollador Full-Stack",
-    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con React, Next.js, Angular y Symfony, y proyectos propios."
+    "description": "Portfolio de Óscar Esteve, desarrollador full-stack en Alzira, Valencia, con el frontend como especialidad. Aplicaciones web con Next.js, React, Angular y Symfony, APIs REST con Express y Prisma, y proyectos propios como TaskFlow."
   },
   "header": {
     "brand": "/oscaresteve",
@@ -145,7 +145,7 @@
     "bio": [
       "Soy Óscar Esteve, desarrollador full-stack en Alzira, Valencia. Llegué al desarrollo por querer entender cómo funcionaba lo que usaba a diario, y esa curiosidad acabó en los ciclos de SMR, DAM y DAW.",
       "Trabajo en aplicaciones web de principio a fin: he implementado funcionalidades con Symfony, he desarrollado un presupuestador con React e integrado en él el catálogo de la empresa, y he creado webs corporativas y tiendas online con WordPress. Donde mejor me muevo es en el frontend, montando interfaces limpias y fáciles de usar.",
-      "Mantengo proyectos propios con Next, Astro y Express porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona."
+      "Mantengo proyectos propios porque me gusta seguir aprendiendo por mi cuenta: cuando una tecnología me llama la atención, monto algo con ella hasta entender bien cómo funciona. El último es TaskFlow, donde me he hecho cargo de las dos mitades: una API REST en Express con roles, eventos de dominio y tests de integración, y su cliente en Next.js con tablero arrastrable y tiempo real."
     ],
     "educationTitle": "Formación",
     "education": [
