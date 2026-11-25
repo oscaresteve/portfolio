@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { slug, liveUrl, repoUrl, image, tags, shots = [] } = project;
+const { slug, liveUrl, livePending, repoUrl, apiRepoUrl, image, tags, shots = [] } = project;
 
 // Circular: del ultimo se vuelve al primero, nunca hay final muerto.
 const current = PROJECTS.findIndex((candidate) => candidate.slug === slug);
@@ -20,7 +20,19 @@ const next = PROJECTS[(current + 1) % PROJECTS.length];
 const locale = getLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 
-const { back, next: nextLabel, stack: stackLabel, shots: shotsTitle, zoom, live, repo, items } = t.projects;
+const {
+  back,
+  next: nextLabel,
+  stack: stackLabel,
+  shots: shotsTitle,
+  zoom,
+  live,
+  livePending: livePendingLabel,
+  repo,
+  repoWeb,
+  repoApi,
+  items,
+} = t.projects;
 const { title, summary, imageAlt, description, shots: shotText } = items[slug];
 
 if (shots.length !== shotText.length) {
@@ -65,16 +77,23 @@ const linkStyle =
           </div>
 
           {
-            (liveUrl || repoUrl) && (
+            (liveUrl || livePending || repoUrl || apiRepoUrl) && (
               <p class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-                {liveUrl && (
+                {liveUrl ? (
                   <a class={linkStyle} href={liveUrl} target="_blank" rel="noopener">
                     {live}
                   </a>
+                ) : (
+                  livePending && <span class="text-muted-foreground">{livePendingLabel}</span>
                 )}
                 {repoUrl && (
                   <a class={linkStyle} href={repoUrl} target="_blank" rel="noopener">
-                    {repo}
+                    {apiRepoUrl ? repoWeb : repo}
+                  </a>
+                )}
+                {apiRepoUrl && (
+                  <a class={linkStyle} href={apiRepoUrl} target="_blank" rel="noopener">
+                    {repoApi}
                   </a>
                 )}
               </p>

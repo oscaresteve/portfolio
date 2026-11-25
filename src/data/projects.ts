@@ -33,7 +33,13 @@ export type ProjectSlug = keyof UI["projects"]["items"];
 export type Project = {
   slug: ProjectSlug;
   liveUrl?: string;
+  /** Marca el hueco del enlace a la demo mientras el despliegue esta en curso.
+   *  Con `liveUrl` puesto no pinta nada: el enlace ya manda. */
+  livePending?: boolean;
   repoUrl?: string;
+  /** Segundo repositorio, para los proyectos partidos en cliente y API. Su
+   *  presencia es lo que renombra `repoUrl` a "codigo del cliente". */
+  apiRepoUrl?: string;
   image: ImageMetadata;
   tags: Tag[];
   /** Capturas del proyecto. La descripcion de cada una sale de
