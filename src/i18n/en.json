@@ -60,12 +60,12 @@
           "The client is Next.js 16 with the App Router and React 19: React Query for server state and optimistic dragging, socket.io for real time, and filters, search and pagination in the URL through nuqs, so any view can be shared as a link. It is my largest project so far, and the first where I wrote the decisions down as I made them."
         ],
         "shots": [
-          "A workspace summary, with its counters and the activity log: what changed and who did it.",
-          "A project summary: its tasks by status, by priority and by due date.",
-          "Task list filtered by status, with each task's priority, assignee and due date.",
-          "Task detail: its fields, the comment thread with mentions, and the history.",
-          "A workspace's members and their roles, with pending invitations kept apart.",
-          "Global search from a keyboard shortcut, with workspaces, projects and tasks in one result."
+          "A workspace summary: the counters, the projects, my own queue of tasks and the activity log. A counter only counts reachable work — active projects you belong to, and the tasks inside them — because a number larger than the list right below it reads as a bug, not as extra information. And the feed cuts one level below its scope: it reaches the projects, never each task's detail, because a single busy project would drown out the rest.",
+          "A project summary, with its tasks by status, by priority and by due date. Charts live only here: it is the one scope with enough homogeneous data for a chart to mean anything, so the workspace summary deliberately has none. Due dates go into buckets — overdue, this week, scheduled, no date — and \"overdue\" means its day has already passed in the user's own time zone: what is due today does not count until tomorrow.",
+          "The task list, with its filters for status, priority, date, archived and favourites. Filters, search, sorting, page and the open tab live in the URL through nuqs, never in useState: a link to \"the archived tasks\" has to open right there and survive a refresh.",
+          "Task detail: its fields, the comment thread with mentions, and the activity. The modal is mounted once at the root and addressed through the URL, so it opens the same way from the list, the board or the search, without losing the screen behind it. Mentions go by username and the comment stores the id alongside it: the id is the only immutable part, and the username keeps the text readable if that person is no longer on the project. Editing only notifies whoever the edit mentions for the first time, because fixing a typo should not ring anyone's bell.",
+          "A workspace's members and their roles, with pending and inactive ones behind a filter of their own. Nobody is deleted: every removal is a soft one and each has its inverse verb, but it wipes the role, so coming back asks which role to return with instead of storing a previous one that goes stale. That filter is only drawn for whoever can undo the removal, because showing rows that lead nowhere is a dead end, and when a row has a single action it is a button: a one-item menu makes you open it to find out there was nothing to choose.",
+          "Global search, opened with ⌘K from any screen. It crosses workspaces, projects and tasks in a single request and resolves no slug, so the only thing separating yours from everyone else's is the same visibility predicate the summaries use: what you cannot open from any screen cannot surface here either. It also searches by the task's label, WEB-12, which exists in no column: it has to be split into the project key and the number."
         ]
       },
       "graphly": {
