@@ -39,6 +39,16 @@ if (shots.length !== shotText.length) {
   throw new Error(`[${locale}/${slug}] ${shots.length} capturas pero ${shotText.length} descripciones. Deben coincidir.`);
 }
 
+/** El texto de cada captura abre describiendo lo que se ve y sigue contando la
+ *  decision que hay detras. Se parten para pintarlos como dos parrafos, y
+ *  porque esa primera frase es la unica que vale como `alt`: el resto ya esta
+ *  escrito al lado de la imagen y repetirlo solo estorba. */
+const shotParts = shotText.map((text) => {
+  const [lead] = text.split(/(?<=\.)\s/);
+
+  return { lead, rest: text.slice(lead.length).trim() };
+});
+
 const meta = "font-mono text-xs italic tracking-widest text-muted-foreground";
 const linkStyle =
   "-my-1 py-1 transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4";
@@ -134,23 +144,27 @@ const linkStyle =
           <ol class="mt-6 divide-y divide-muted">
             {shots.map((shot, position) => (
               <li class="grid gap-y-6 py-10 sm:py-14 md:grid-cols-12 md:gap-x-10">
-                <p class="flex gap-x-5 md:col-span-4 items-baseline">
+                <div class="flex items-baseline gap-x-5 md:col-span-4">
                   <span class:list={["shrink-0 tabular-nums", meta]} aria-hidden="true">
                     {String(position + 1).padStart(2, "0")}
                   </span>
-                  <span class="text-balance">{shotText[position]}</span>
-                </p>
+
+                  <div class="flex flex-col gap-y-4 text-pretty">
+                    <p>{shotParts[position].lead}</p>
+                    {shotParts[position].rest && <p class="text-muted-foreground">{shotParts[position].rest}</p>}
+                  </div>
+                </div>
 
                 <button
                   class="group block w-full cursor-zoom-in focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 md:col-span-8"
                   type="button"
                   data-shot
-                  aria-label={`${zoom}: ${shotText[position]}`}
+                  aria-label={`${zoom}: ${shotParts[position].lead}`}
                 >
                   <ProjectShot
                     class="border border-muted transition-colors duration-300 group-hover:border-primary group-focus-visible:border-primary"
                     src={shot}
-                    alt={shotText[position]}
+                    alt={shotParts[position].lead}
                     aspect={null}
                     widths={[640, 1280, 1920, 2560]}
                     sizes="(min-width: 1360px) 800px, (min-width: 768px) 64vw, calc(100vw - 2rem)"
